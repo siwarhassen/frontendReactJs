@@ -1,13 +1,36 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "proxy": "https://aaweni.herokuapp.com",
-  "build": "CI= react-scripts build",
-  "engines": {
-    "npm": "6.14.6"
-  },
-  "private": true,
-  "dependencies": {
+    "name": "frontend",
+    "version": "7.0.7",
+    "private": true,
+    "homepage": "/",
+    "scripts": {
+        "start": "react-scripts start -o",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "lint": "eslint src",
+        "format": "prettier --write \"src/**/*.{js,css,scss,html}\"",
+        "rtl": "webpack"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "ie 11"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version",
+            "last 1 edge version",
+            "IE 11"
+        ]
+    },
+    "dependencies": {
     "@atlaskit/theme": "^11.1.0",
     "@material-ui/core": "^4.11.4",
     "@react-pdf-viewer/core": "^2.4.1",
@@ -76,29 +99,5 @@
     "web-vitals": "^1.1.0",
     "websocket": "^1.0.33",
     "yup": "^0.32.9"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
