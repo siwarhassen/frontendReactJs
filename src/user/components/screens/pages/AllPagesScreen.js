@@ -34,7 +34,7 @@ const AllPagesScreen = ({history}) =>{
             }
         }
 
-        axios.get(`/category/getAll`, config)
+        axios.get(`https://aaweni.herokuapp.com/category/getAll`, config)
         .then((response) => {
          setCategories(response.data);
          console.log(response.data)
@@ -45,7 +45,7 @@ const AllPagesScreen = ({history}) =>{
 
         /**get followers pages */
 
-        axios.get(`/followpage/getAll`, config)
+        axios.get(`https://aaweni.herokuapp.com/followpage/getAll`, config)
         .then((response) => {
             setFollowers(response.data);
         console.log(response.data)
