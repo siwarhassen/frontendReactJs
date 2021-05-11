@@ -28,7 +28,7 @@ const EditProjectScreen = ({history,match}) =>{
             }
         }
 
-                axios.get(`/project/details/${id}`, config)
+                axios.get(`https://aaweni.herokuapp.com/project/details/${id}`, config)
                   .then((response) => {
                     console.log(project)
                    
@@ -82,7 +82,7 @@ onSubmit={ async (values)=>{
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
       const id = match.params.id;
-    axios.put(`/project/update/${id}`,valuesToSend, {
+    axios.put(`https://aaweni.herokuapp.com/project/update/${id}`,valuesToSend, {
         headers: headers
       })
       .then((response) => {
