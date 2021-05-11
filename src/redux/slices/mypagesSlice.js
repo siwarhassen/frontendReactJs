@@ -44,7 +44,7 @@ export const fetchMyPages=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/page/getMyPages`, config)
+    axios.get(`https://aaweni.herokuapp.com/page/getMyPages`, config)
                 .then((response) => {
                  dispatch(populateMyPages(response.data));
                  console.log(response.data)
