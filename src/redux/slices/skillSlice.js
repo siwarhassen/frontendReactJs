@@ -48,7 +48,7 @@ export const fetchSkills=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/skill/getAll`, config)
+    axios.get(`https://aaweni.herokuapp.com/skill/getAll`, config)
                 .then((response) => {
                  dispatch(populateSkills(response.data));
                  console.log(response.data)
