@@ -120,7 +120,7 @@ const [Experience,setExperience] = useState(Object);
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
           }
 
-        axios.get(`/api/auth/details_user`, {
+        axios.get(`https://aaweni.herokuapp.com/api/auth/details_user`, {
             headers: headers
         })
         .then((response) => {
@@ -134,7 +134,7 @@ const [Experience,setExperience] = useState(Object);
         
 
         if(url){
-            axios.put(`/api/auth/updateprofilepicture`,{
+            axios.put(`https://aaweni.herokuapp.com/api/auth/updateprofilepicture`,{
                 profilePicture:url
             }, {
                 headers: headers
@@ -148,7 +148,7 @@ const [Experience,setExperience] = useState(Object);
         }
 
         if(urlC){
-            axios.put(`/api/auth/updatecoverpicture`,{
+            axios.put(`https://aaweni.herokuapp.com/api/auth/updatecoverpicture`,{
                 coverPicture:urlC
             }, {
                 headers: headers
@@ -164,7 +164,7 @@ const [Experience,setExperience] = useState(Object);
 
             /**get all followers */
 
-            axios.get(`/followuser/getFollowers`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/getFollowers`, {
                 headers: headers
             })
             .then((response) => {
@@ -176,7 +176,7 @@ const [Experience,setExperience] = useState(Object);
             })
 
 
-            axios.get(`/followuser/numbers`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/numbers`, {
                 headers: headers
             })
             .then((response) => {
@@ -187,7 +187,7 @@ const [Experience,setExperience] = useState(Object);
             console.log(error)
             })
 
-            axios.get(`/followuser/numbersf`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/numbersf`, {
                 headers: headers
             })
             .then((response) => {
@@ -202,7 +202,7 @@ const [Experience,setExperience] = useState(Object);
 
             /**get all followers page */
 
-            axios.get(`/followpage/getFollowers`, {
+            axios.get(`https://aaweni.herokuapp.com/followpage/getFollowers`, {
                 headers: headers
             })
             .then((response) => {
@@ -214,7 +214,7 @@ const [Experience,setExperience] = useState(Object);
             })
 
 
-            axios.get(`/followpage/numbers`, {
+            axios.get(`https://aaweni.herokuapp.com/followpage/numbers`, {
                 headers: headers
             })
             .then((response) => {
@@ -239,7 +239,7 @@ const [Experience,setExperience] = useState(Object);
           }
           console.log(e.target.value)
 
-        axios.put(`/api/auth/update`,{username,dateBirth,numTel,country,address}, {
+        axios.put(`https://aaweni.herokuapp.com/api/auth/update`,{username,dateBirth,numTel,country,address}, {
             headers: headers
           })
           .then((response) => {
@@ -294,7 +294,7 @@ const [Experience,setExperience] = useState(Object);
       }
       console.log(url)
 
-        axios.put(`/api/auth/updateprofilepicture`,{
+        axios.put(`https://aaweni.herokuapp.com/api/auth/updateprofilepicture`,{
             profilePicture:url
         }, {
             headers: headers
@@ -336,7 +336,7 @@ const [Experience,setExperience] = useState(Object);
    }
    console.log(url)
 
-     axios.put(`/api/auth/updateprofilepicture`,{
+     axios.put(`https://aaweni.herokuapp.com/api/auth/updateprofilepicture`,{
          profilePicture:url
      }, {
          headers: headers
@@ -377,7 +377,7 @@ const [Experience,setExperience] = useState(Object);
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
 
-    axios.delete(`/experience/delete/${id}`, {
+    axios.delete(`https://aaweni.herokuapp.com/experience/delete/${id}`, {
         headers: headers
       })
       .then((response) => {
@@ -398,7 +398,7 @@ const [Experience,setExperience] = useState(Object);
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
           }
     
-        axios.delete(`/cv/delete/${id}`, {
+        axios.delete(`https://aaweni.herokuapp.com/cv/delete/${id}`, {
             headers: headers
           })
           .then((response) => {
@@ -588,7 +588,7 @@ onSubmit={ async (values)=>{
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
 
-    axios.post(`/experience/add`,valuesToSend, {
+    axios.post(`https://aaweni.herokuapp.com/experience/add`,valuesToSend, {
         headers: headers
       })
       .then((response) => {
@@ -1035,7 +1035,7 @@ console.log(values.cv)
       }
       console.log(formData)
 
-    axios.post(`/cv/add`,formData, {
+    axios.post(`https://aaweni.herokuapp.com/cv/add`,formData, {
         headers: headers
       })
       .then((response) => {
