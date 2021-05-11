@@ -34,7 +34,7 @@ const UserNotFollowedScreen = ({history}) =>{
 
                 /** connected user details */
 
-                axios.get(`/api/auth/details_user`, config)
+                axios.get(`https://aaweni.herokuapp.com/api/auth/details_user`, config)
                 .then((response) => {
                     setUser(response.data.data);
                  console.log(user)
@@ -45,7 +45,7 @@ const UserNotFollowedScreen = ({history}) =>{
 
                 /**get all users sauf le user connecté */
 
-                axios.get(`/api/auth/all_users`, config)
+                axios.get(`https://aaweni.herokuapp.com/api/auth/all_users`, config)
                 .then((response) => {
                     setUsers(response.data);
                  console.log(response.data)
@@ -56,7 +56,7 @@ const UserNotFollowedScreen = ({history}) =>{
 
                  /**get followers */
 
-                axios.get(`/followuser/getAll`, config)
+                axios.get(`https://aaweni.herokuapp.com/followuser/getAll`, config)
                 .then((response) => {
                     setFollowers(response.data);
                 console.log(response.data)
@@ -67,7 +67,7 @@ const UserNotFollowedScreen = ({history}) =>{
 
                 /**get all followers */
 
-                axios.get(`/followuser/getFollowers1`, config)
+                axios.get(`https://aaweni.herokuapp.com/followuser/getFollowers1`, config)
                 .then((response) => {
                     setAllFollowers(response.data);
                 console.log(response.data)
@@ -148,7 +148,7 @@ const UserNotFollowedScreen = ({history}) =>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
           }
 
-          axios.post(`/followuser/add/${id}`,{},{
+          axios.post(`https://aaweni.herokuapp.com/followuser/add/${id}`,{},{
             headers: headers
           })
           .then((response) => {
@@ -159,7 +159,7 @@ const UserNotFollowedScreen = ({history}) =>{
             console.log(error)
           })
 
-          axios.post(`/notif/add/${id}`,{body:`you have an invitation from ${user.username} `,title:"new invitation"}, {
+          axios.post(`https://aaweni.herokuapp.com/notif/add/${id}`,{body:`you have an invitation from ${user.username} `,title:"new invitation"}, {
             headers: headers
           })
           .then((response) => {
@@ -177,7 +177,7 @@ const UserNotFollowedScreen = ({history}) =>{
                 Authorization: `Bearer ${localStorage.getItem("authToken")}`
               }
     
-              axios.get(`/followuser/getAll/${id}`, {
+              axios.get(`https://aaweni.herokuapp.com/followuser/getAll/${id}`, {
                 headers: headers
             })
                 .then((response) => {
@@ -190,7 +190,7 @@ const UserNotFollowedScreen = ({history}) =>{
 
                 for (let i of f){
                     if(i.FollowerId==id){
-                        axios.delete(`/followuser/delete/${i._id}`,{},{
+                        axios.delete(`https://aaweni.herokuapp.com/followuser/delete/${i._id}`,{},{
                             headers: headers
                           })
                           .then((response) => {
