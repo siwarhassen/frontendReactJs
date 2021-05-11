@@ -191,7 +191,7 @@ export default function Certification({match}) {
         <div style={{display:"flex",justifyContent:"space-evenly"}}>
               
               <FacebookShareButton
-      url={"http://localhost:3001/certification/60926261a621ce3b547224f2"}
+      url={"https://3aweni.netlify.app/certification/"+certification._id}
     >
       <FacebookIcon size={32} round />
     </FacebookShareButton>
@@ -199,7 +199,7 @@ export default function Certification({match}) {
           <LinkedinShareButton url="https://codesandbox.io/s/rrlli" > <LinkedinIcon size={32} round /> </LinkedinShareButton>
           <TwitterShareButton
       title={"test"}
-      url={"http://localhost:3001/certification/60926261a621ce3b547224f2"}
+      url={"https://3aweni.netlify.app/certification/"+certification._id}
       hashtags={["hashtag1", "hashtag2"]}
     >
       <TwitterIcon size={32} round />
