@@ -37,7 +37,7 @@ const RegisterScreen = ({history}) =>{
 
         try {
             const {data} = await axios.post(
-                "/api/auth/register", 
+                "https://aaweni.herokuapp.com/api/auth/register", 
                 {username, email, password},
                 config);
             localStorage.setItem("authToken", data.token);
