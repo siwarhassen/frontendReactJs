@@ -48,7 +48,7 @@ export const fetchCvs=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/cv/getAll`, config)
+    axios.get(`https://aaweni.herokuapp.com/cv/getAll`, config)
                 .then((response) => {
                  dispatch(populateCvs(response.data));
                  console.log(response.data)
