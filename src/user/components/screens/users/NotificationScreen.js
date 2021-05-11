@@ -23,7 +23,7 @@ const NotificationScreen = ({history}) =>{
                     }
                 }
 
-                axios.get(`/notif/getNotif`, config)
+                axios.get(`https://aaweni.herokuapp.com/notif/getNotif`, config)
                 .then((response) => {
                 setNotifUser(response.data);
                 console.log(response.data)
