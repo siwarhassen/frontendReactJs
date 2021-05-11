@@ -20,7 +20,7 @@ const EducationScreen = ({history}) =>{
                 console.log(config.headers.Authorization)
     
                 try {
-                    axios.get("/api/auth/details_user",config).then((response)=>{
+                    axios.get("https://aaweni.herokuapp.com/api/auth/details_user",config).then((response)=>{
                         setUser(response.data.data);
                         console.log(user)});
                        
