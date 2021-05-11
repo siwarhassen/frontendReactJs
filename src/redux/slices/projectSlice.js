@@ -48,7 +48,7 @@ export const fetchProjects=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/project/getAll`, config)
+    axios.get(`https://aaweni.herokuapp.com/project/getAll`, config)
                 .then((response) => {
                  dispatch(populateProjects(response.data));
                  console.log(response.data)
