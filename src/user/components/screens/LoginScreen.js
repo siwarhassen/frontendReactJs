@@ -34,7 +34,7 @@ const LoginScreen = ({history}) =>{
 
         try {
             const {data} = await axios.post(
-                "/api/auth/login", 
+                "https://aaweni.herokuapp.com/api/auth/login", 
                 {email, password},
                 config);
             localStorage.setItem("authToken", data.token);
@@ -56,7 +56,7 @@ const LoginScreen = ({history}) =>{
         };
          try {
             const {data} = await axios.post(
-                '/api/auth/googlelogin',
+                'https://aaweni.herokuapp.com/api/auth/googlelogin',
                 {tokenId: response.tokenId},
                 config);
            
