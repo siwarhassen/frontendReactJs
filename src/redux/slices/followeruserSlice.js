@@ -44,7 +44,7 @@ export const fetchFollowerusers=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/followuser/getAll`, config)
+    axios.get(`https://aaweni.herokuapp.com/followuser/getAll`, config)
                 .then((response) => {
                  dispatch(populateFollowerusers(response.data));
                  console.log(response.data)
@@ -62,7 +62,7 @@ export const fetchFollowerusers=()=>async(dispatch)=>{
         }
     }
 
-    axios.get(`/page/getPagesByCategory/${category}`, config)
+    axios.get(`https://aaweni.herokuapp.com/page/getPagesByCategory/${category}`, config)
     .then((response) => {
     dispatch(populatePages(response.data));
      console.log(response.data)
