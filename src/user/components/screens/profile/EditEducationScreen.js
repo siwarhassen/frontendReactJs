@@ -28,7 +28,7 @@ const EditEducationScreen = ({history,match}) =>{
             }
         }
 
-                axios.get(`/education/details/${id}`, config)
+                axios.get(`https://aaweni.herokuapp.com/education/details/${id}`, config)
                   .then((response) => {
                    //setEducation(response.data);
                    console.log(education)
@@ -95,7 +95,7 @@ onSubmit={ async (values)=>{
       const id = match.params.id;
       console.log(valuesToSend)
 
-    axios.put(`/education/update/${id}`,valuesToSend, {
+    axios.put(`https://aaweni.herokuapp.com/education/update/${id}`,valuesToSend, {
         headers: headers
       })
       .then((response) => {
