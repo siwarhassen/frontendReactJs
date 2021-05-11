@@ -26,7 +26,7 @@ const PageDetailsScreen = ({history,match}) =>{
                 const id = match.params.id;
 
                 
-                    axios.get(`/followpage/getAll`, config)
+                    axios.get(`https://aaweni.herokuapp.com/followpage/getAll`, config)
                 .then((response) => {
                     setFollowers_page(response.data);
                 console.log(response.data)
@@ -44,7 +44,7 @@ const PageDetailsScreen = ({history,match}) =>{
                 }
                 
 
-                axios.get(`/page/details/${id}`, config)
+                axios.get(`https://aaweni.herokuapp.com/page/details/${id}`, config)
                   .then((response) => {
                    setPage(response.data);
                    console.log(page)
@@ -55,7 +55,7 @@ const PageDetailsScreen = ({history,match}) =>{
 
                   /** connected user details */
 
-                axios.get(`/api/auth/details_user`, config)
+                axios.get(`https://aaweni.herokuapp.com/api/auth/details_user`, config)
                 .then((response) => {
                     setUser(response.data.data);
                  console.log(user)
@@ -64,7 +64,7 @@ const PageDetailsScreen = ({history,match}) =>{
                   console.log(error)
                 })
 
-                  axios.get(`/followpage/numbers/${id}`, config)
+                  axios.get(`https://aaweni.herokuapp.com/followpage/numbers/${id}`, config)
                 .then((response) => {
                     setNumber(response.data);
                 console.log(response.data)
@@ -73,7 +73,7 @@ const PageDetailsScreen = ({history,match}) =>{
                 console.log(error)
                 })
 
-                axios.get(`/followpage/get/${id}`, config)
+                axios.get(`https://aaweni.herokuapp.com/followpage/get/${id}`, config)
                 .then((response) => {
                     setUsers(response.data);
                 console.log(response.data)
@@ -94,7 +94,7 @@ const PageDetailsScreen = ({history,match}) =>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
           }
           if (etat=='Join'){
-            axios.post(`/followpage/add/${id}`,{},{
+            axios.post(`https://aaweni.herokuapp.com/followpage/add/${id}`,{},{
                 headers: headers
               })
               .then((response) => {
@@ -118,7 +118,7 @@ const PageDetailsScreen = ({history,match}) =>{
     
           }else if(etat=='Unjoin'){
             setEtat('Join')
-            axios.get(`/followpage/getAll`, {
+            axios.get(`https://aaweni.herokuapp.com/followpage/getAll`, {
                 headers: headers
               })
             .then((response) => {
@@ -131,7 +131,7 @@ const PageDetailsScreen = ({history,match}) =>{
     
             for (let i of followers_page){
                 if(i.PageId === id){
-                   axios.delete(`/followpage/delete/${i._id}`, {
+                   axios.delete(`https://aaweni.herokuapp.com/followpage/delete/${i._id}`, {
                     headers: headers
                   })
                   .then((response) => {
