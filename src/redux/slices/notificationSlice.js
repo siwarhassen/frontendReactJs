@@ -44,7 +44,7 @@ export const fetchNotifications=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/notif/getNotif`, config)
+    axios.get(`https://aaweni.herokuapp.com/notif/getNotif`, config)
                 .then((response) => {
                  dispatch(populateNotifications(response.data));
                  console.log(response.data)
