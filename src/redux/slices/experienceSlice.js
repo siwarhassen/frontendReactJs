@@ -48,7 +48,7 @@ export const fetchExperiences=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/experience/getAll`, config)
+    axios.get(`https://aaweni.herokuapp.com/experience/getAll`, config)
                 .then((response) => {
                  dispatch(populateExperiences(response.data));
                  console.log(response.data)
