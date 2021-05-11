@@ -45,7 +45,7 @@ const id = match.params.id;
 
           
 
-        axios.get(`/api/auth/user/${id}`, {
+        axios.get(`https://aaweni.herokuapp.com/api/auth/user/${id}`, {
             headers: headers
         })
         .then((response) => {
@@ -58,7 +58,7 @@ const id = match.params.id;
 
         /** education */
 
-        axios.get(`/skill/getAll/${id}`, {
+        axios.get(`https://aaweni.herokuapp.com/skill/getAll/${id}`, {
             headers: headers
         })
         .then((response) => {
@@ -70,7 +70,7 @@ const id = match.params.id;
 
             /**get all followers */
 
-            axios.get(`/followuser/getAllu/${id}`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/getAllu/${id}`, {
                 headers: headers
             })
             .then((response) => {
@@ -82,7 +82,7 @@ const id = match.params.id;
             })
 
 
-            axios.get(`/followuser/numbers/${id}`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/numbers/${id}`, {
                 headers: headers
             })
             .then((response) => {
@@ -93,7 +93,7 @@ const id = match.params.id;
             console.log(error)
             })
 
-            axios.get(`/followuser/numbersfu/${id}`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/numbersfu/${id}`, {
                 headers: headers
             })
             .then((response) => {
@@ -110,7 +110,7 @@ const id = match.params.id;
 
              /**get all my followers */
 
-             axios.get(`/followuser/getAll`, {
+             axios.get(`https://aaweni.herokuapp.com/followuser/getAll`, {
                 headers: headers
             })
              .then((response) => {
@@ -165,7 +165,7 @@ const id = match.params.id;
         if (etat=='Follow'){
         
 
-          axios.post(`/followuser/add/${id}`,{},{
+          axios.post(`https://aaweni.herokuapp.com/followuser/add/${id}`,{},{
             headers: headers
           })
           .then((response) => {
@@ -176,7 +176,7 @@ const id = match.params.id;
             console.log(error)
           })
 
-          axios.post(`/notif/add/${id}`,{body:`you have an invitation from ${user.username} `,title:"new invitation"}, {
+          axios.post(`https://aaweni.herokuapp.com/notif/add/${id}`,{body:`you have an invitation from ${user.username} `,title:"new invitation"}, {
             headers: headers
           })
           .then((response) => {
@@ -188,7 +188,7 @@ const id = match.params.id;
           })
         }else if (etat=='Followed'){
 
-            axios.get(`/followuser/getAll/${id}`, {
+            axios.get(`https://aaweni.herokuapp.com/followuser/getAll/${id}`, {
                 headers: headers
             })
                 .then((response) => {
@@ -201,7 +201,7 @@ const id = match.params.id;
 
                 for (let i of f){
                     if(i.FollowerId==id){
-                        axios.delete(`/followuser/delete/${i._id}`,{},{
+                        axios.delete(`https://aaweni.herokuapp.com/followuser/delete/${i._id}`,{},{
                             headers: headers
                           })
                           .then((response) => {
