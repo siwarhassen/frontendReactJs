@@ -32,7 +32,7 @@ const ResetPasswordScreen = ({history, match}) =>{
 
         try {
             const {data} = await axios.post(
-            `/api/auth/resetpassword/${match.params.token}`,
+            `https://aaweni.herokuapp.com/api/auth/resetpassword/${match.params.token}`,
             {
                 password,
             },
