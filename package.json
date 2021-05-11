@@ -2,6 +2,7 @@
     "name": "frontend",
     "version": "0.1.0",
     "private": true,
+    "proxy": "https://aaweni.herokuapp.com",
     "scripts": {
         "start": "react-scripts start -o",
         "build": "react-scripts build",
