@@ -21,7 +21,7 @@ const MyPagesScreen = ({history}) =>{
                     }
                 }
 
-                axios.get(`/page/getMyPages`, config)
+                axios.get(`https://aaweni.herokuapp.com/page/getMyPages`, config)
                 .then((response) => {
                  setPages(response.data);
                  console.log(response.data)
@@ -42,7 +42,7 @@ const MyPagesScreen = ({history}) =>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
           }
     
-        axios.delete(`/page/delete/${id}`, {
+        axios.delete(`https://aaweni.herokuapp.com/page/delete/${id}`, {
             headers: headers
           })
           .then((response) => {
