@@ -27,7 +27,7 @@ const CreatePageScreen = ({history}) =>{
             }
         }
 
-        axios.get(`/category/getAll`, config)
+        axios.get(`https://aaweni.herokuapp.com/category/getAll`, config)
         .then((response) => {
          setCategories(response.data);
          console.log(response.data)
@@ -110,7 +110,7 @@ console.log(values)
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
 
-    axios.post(`/page/add`,formData, {
+    axios.post(`https://aaweni.herokuapp.com/page/add`,formData, {
         headers: headers
       })
       .then((response) => {
