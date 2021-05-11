@@ -37,7 +37,7 @@ const groupsSlice=createSlice({
         });
 
         export const fetchMembers=(idg)=>async(dispatch)=>{
-            const [res,error]=await queryApi("groupmember/members/"+idg);
+            const [res,error]=await queryApi("https://aaweni.herokuapp.com/groupmember/members/"+idg);
             if(error){
                 console.log(error);
             }
