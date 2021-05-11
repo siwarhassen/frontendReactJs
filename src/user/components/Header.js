@@ -36,14 +36,14 @@ const [userId, setUserId] = useState("");
                     }
                 }
                 try {
-                    axios.get("/api/auth/details_user",config).then((response)=>{
+                    axios.get("https://aaweni.herokuapp.com/api/auth/details_user",config).then((response)=>{
                         setUser(response.data.data);
                         console.log(user)});                    
                    
                 } catch (error) {
                     console.log(error)
                 }
-                axios.get(`/notif/getAll`, config)
+                axios.get(`https://aaweni.herokuapp.com/notif/getAll`, config)
                 .then((response) => {
                 setNotif(response.data);
                 console.log(response.data)
