@@ -52,7 +52,7 @@ export const fetchUsers=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/api/auth/all_users`, config)
+    axios.get(`https://aaweni.herokuapp.com/api/auth/all_users`, config)
                 .then((response) => {
                  dispatch(populateUsers(response.data));
                  console.log(response.data)
@@ -69,7 +69,7 @@ export const fetchconnectuser=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get("/api/auth/details_user",config).then((response)=>{
+    axios.get("https://aaweni.herokuapp.com/api/auth/details_user",config).then((response)=>{
         dispatch(selectoneuser(response.data.data));
      });
 
