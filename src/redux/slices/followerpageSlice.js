@@ -48,7 +48,7 @@ export const fetchFollowerpages=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/followpage/getN`, config)
+    axios.get(`https://aaweni.herokuapp.com/followpage/getN`, config)
                 .then((response) => {
                  dispatch(populateFollowerpages(response.data));
                  console.log(response.data)
