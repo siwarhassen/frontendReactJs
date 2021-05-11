@@ -48,7 +48,7 @@ export const fetchEducations=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/education/getAll`, config)
+    axios.get(`https://aaweni.herokuapp.com/education/getAll`, config)
                 .then((response) => {
                  dispatch(populateEducations(response.data));
                  console.log(response.data)
