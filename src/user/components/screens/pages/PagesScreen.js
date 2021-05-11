@@ -21,7 +21,7 @@ const PagesScreen = ({history}) =>{
             }
         }
 
-        axios.get(`/page/getAll`, config)
+        axios.get(`https://aaweni.herokuapp.com/page/getAll`, config)
         .then((response) => {
             setPages(response.data);
          console.log(response.data)
@@ -30,7 +30,7 @@ const PagesScreen = ({history}) =>{
           console.log(error)
         })
 
-        axios.get(`/category/getAll`, config)
+        axios.get(`https://aaweni.herokuapp.com/category/getAll`, config)
         .then((response) => {
          setCategories(response.data);
          console.log(response.data)
