@@ -44,7 +44,7 @@ export const fetchPages=()=>async(dispatch)=>{
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-    axios.get(`/page/Allpages`, config)
+    axios.get(`https://aaweni.herokuapp.com/page/Allpages`, config)
                 .then((response) => {
                  dispatch(populatePages(response.data));
                  console.log(response.data)
@@ -62,7 +62,7 @@ export const filter=(category)=>async(dispatch)=>{
         }
     }
 
-    axios.get(`/page/getPagesByCategory/${category}`, config)
+    axios.get(`https://aaweni.herokuapp.com/page/getPagesByCategory/${category}`, config)
     .then((response) => {
     dispatch(populatePages(response.data));
      console.log(response.data)
