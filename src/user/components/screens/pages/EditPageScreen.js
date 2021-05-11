@@ -30,7 +30,7 @@ const CreatePageScreen = ({history,match}) =>{
             }
         }
 
-        axios.get(`/category/getAll`, config)
+        axios.get(`https://aaweni.herokuapp.com/category/getAll`, config)
         .then((response) => {
          setCategories(response.data);
          console.log(response.data)
@@ -41,7 +41,7 @@ const CreatePageScreen = ({history,match}) =>{
 
         const id = match.params.id;
 
-                axios.get(`/page/details/${id}`, config)
+                axios.get(`https://aaweni.herokuapp.com/page/details/${id}`, config)
                   .then((response) => {
                    //setPage(response.data);
                    console.log(page)
@@ -123,7 +123,7 @@ onSubmit={ async (values)=>{
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
       const id = match.params.id;
-    axios.put(`/page/update/${id}`,values, {
+    axios.put(`https://aaweni.herokuapp.com/page/update/${id}`,values, {
         headers: headers
       })
       .then((response) => {
