@@ -27,7 +27,7 @@ export default function CourseChart() {
       setChartData({
         labels:namecoursesenrolled,
         datasets:[{
-          label:"number of users registered in course",
+          label:"number of users registered in this online course",
           data:numberinroled,
           backgroundColor:"#0cb9c1"
          

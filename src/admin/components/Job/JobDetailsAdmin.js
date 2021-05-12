@@ -18,7 +18,7 @@ function JobDetailsAdmin() {
                       <div class="breadcomb-ctn">
                         <h2>Product Details</h2>
                         <p>
-                          Welcome to Nalika <span class="bread-ntd">Admin Template</span>
+                          Welcome to 3aweni <span class="bread-ntd">3aweni </span>
                         </p>
                       </div>
                     </div>

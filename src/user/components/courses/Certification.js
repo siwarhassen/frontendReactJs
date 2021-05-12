@@ -152,8 +152,8 @@ export default function Certification({match}) {
                     <br/>
                     <h5 class="uk-text-bold"> Terminé par {certification?.usercourse.UserId.username}</h5>
                       <h6 class="uk-text-bold">20 juin 2020</h6>
-                      <h6 class="uk-text-bold">Note Obtenue:{ parseFloat(certification?.Score).toFixed(2)}%</h6>
-                      <p style={{fontSize:"12px"}}>Le compte de {certification?.usercourse.UserId.username} est vérifié. 3aweni certifie qu'il ou elle a terminé et réussi le cours {certification?.usercourse.CourseId.Name}</p>
+                      <h6 class="uk-text-bold">Score:{ parseFloat(certification?.Score).toFixed(2)}%</h6>
+                      <p style={{fontSize:"12px"}}>This account {certification?.usercourse.UserId.username} is verified.  {certification?.usercourse.CourseId.Name} has finished this <strong>online course</strong> and got an <strong>online certificate</strong> </p>
                 </div>
         
                
@@ -163,7 +163,7 @@ export default function Certification({match}) {
 
         <div class="uk-card-default rounded mt-4">
             <div class="uk-flex uk-flex-between uk-flex-middle py-3 px-4">
-                <h5 class="mb-0"> About course </h5>
+                <h5 class="mb-0"> About online course </h5>
             
             </div>
             <hr class="m-0"/>
