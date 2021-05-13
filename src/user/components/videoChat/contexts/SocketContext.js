@@ -4,7 +4,7 @@ import io from "socket.io-client";
 export const SocketIoContext = createContext();
 
 const SocketContext = ({ children }) => {
-  const socket = io.connect("wss://aaweni.herokuapp.com/socket.io/?EIO=4&transport=websocket");
+  const socket = io.connect("wss://aaweni.herokuapp.com");
   console.log(socket);
   return (
     <SocketIoContext.Provider value={{ socket }}>
