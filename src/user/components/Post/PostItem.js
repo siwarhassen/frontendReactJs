@@ -50,7 +50,7 @@ export default function PostItem({ post, key }) {
     axios.get("https://aaweni.herokuapp.com/pi/commentRoute/nbcomment/" + post._id).then((res) => {
       setnbComments(res.data.nbcomments);
     });
-    const socket = io.connect("ws://aaweni.herokuapp.com/");
+    const socket = io.connect("wss://aaweni.herokuapp.com");
     setSocket(socket);
 
     return () => socket.close();
