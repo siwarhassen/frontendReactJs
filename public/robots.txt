@@ -5,4 +5,4 @@ Disallow: /group
 Allow: /
 Allow: /*.js?* 
 Disallow: /assets
-Sitemap: http://www.3aweni.heroku.com
+
