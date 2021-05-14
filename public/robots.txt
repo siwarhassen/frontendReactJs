@@ -1,8 +1,2 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow: /chat
-Disallow: /group
-Allow: /
-Allow: /*.js?* 
-Disallow: /assets
+
 
