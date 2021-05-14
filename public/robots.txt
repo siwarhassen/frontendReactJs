@@ -4,5 +4,5 @@ Disallow: /chat
 Disallow: /group
 Allow: /
 Allow: /*.js?* 
-Disallow: /assets
+Disallow: /assets/
 
