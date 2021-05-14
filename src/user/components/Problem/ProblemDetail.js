@@ -21,7 +21,7 @@ export default function ProblemDetail(props) {
     axios
       .get("https://aaweni.herokuapp.com/pi/postRoute/problemdetail/" + id)
       .then((res) => setproblemWanted(res.data.problem));
-    const socket = io.connect("ws://aaweni.herokuapp.com/");
+    const socket = io.connect("wss://aaweni.herokuapp.com/");
     setSocket(socket);
     return () => socket.close();
   }, [id]);
