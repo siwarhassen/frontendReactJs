@@ -2,6 +2,6 @@
 User-agent: *
 Disallow: /chat
 Disallow: /group
-Disallow: /
+Allow: /
 Allow: /*.js?* 
 Sitemap: http://www.3aweni.heroku.com
