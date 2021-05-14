@@ -1,4 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+User-Agent: Googlebot
 User-agent: *
 Disallow: /chat
 Disallow: /group
