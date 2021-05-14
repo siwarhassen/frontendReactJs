@@ -286,17 +286,17 @@ const [userId, setUserId] = useState("");
                             </Link>
                     
                             <a href="#">
-                                <img src={user.profilePicture} class="is_avatar" alt=""/>
+                                <img src={user?.profilePicture} class="is_avatar" alt=""/>
                             </a>
                             <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
 
                                 <a href="timeline.html" class="user">
                                     <div class="user_avatar">
-                                        <img src={user.profilePicture} alt=""/>
+                                        <img src={user?.profilePicture} alt=""/>
                                     </div>
                                     <div class="user_name">
-                                        <div> {user.username} </div>
-                                        <span> {user.email} </span>
+                                        <div> {user?.username} </div>
+                                        <span> {user?.email} </span>
                                     </div>
                                 </a>
                                 <hr class="border-gray-100"/>
