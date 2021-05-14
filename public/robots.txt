@@ -5,4 +5,5 @@ Disallow: /group
 Allow: /
 Allow: /*.js?* 
 Disallow: /assets/
+Sitemap: https://3aweni.netlify.app/sitemap.xml
 
