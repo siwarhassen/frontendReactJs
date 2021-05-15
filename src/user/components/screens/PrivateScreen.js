@@ -3,7 +3,9 @@ import axios from 'axios';
 import Header from '../Header';
 import { useDispatch ,useSelector} from 'react-redux';
 import {fetchconnectuser,selectoneuser,selectSessionUser} from "../../../redux/slices/userSlice";
-
+import AddPost from '../Post/AddPost';
+import PostItem from '../Post/PostItem';
+import { deletePost, getPosts } from "../../../redux/actions/postAction";
 const PrivateScreen = ({history}) => {
     const [error, setError]= useState("");
     const [privateData, setPrivateData]= useState("");
@@ -46,6 +48,10 @@ const dispatch = useDispatch();
         history.push("/login");
     };
 
+    useEffect(() => {
+      dispatch(getPosts());
+    }, [dispatch]);
+    const posts = useSelector((state) => state.postReducer.posts);
     return error ? (
         <span>{error}</span>
     ) : (
@@ -54,8 +60,21 @@ const dispatch = useDispatch();
        <div style={{ background: "green", color: "white" }}>{privateData.map(home => <div>{home.data}</div>)}</div>
        <button onClick={logoutHandler}>Logout</button>
        */} 
-       <Header/>
-        
+       <body>
+    <Header />
+      <div class="main_content">
+        <div class="mcontainer">
+          <div class="lg:flex lg:space-x-10">
+            <div class="lg:w-3/4 lg:px-20 space-y-7">
+              <AddPost></AddPost>
+              {posts.map((post, index) => {
+                return <PostItem post={post} key={post._id} />;
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
         </>
     );
 };
