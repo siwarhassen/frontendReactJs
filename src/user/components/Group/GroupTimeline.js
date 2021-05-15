@@ -93,6 +93,7 @@ for (let i = 0; i < members?.length ; i++) {
       .then(res => {
         console.log(res);
         console.log(res.data);
+		window.location.reload();
 	  })
   }
 
@@ -101,6 +102,7 @@ for (let i = 0; i < members?.length ; i++) {
       .then(res => {
         console.log(res);
         console.log(res.data);
+		window.location.reload();
 	  })
   }
 
@@ -216,14 +218,14 @@ async function applyupdate() {
 							
 							
       {
-			 ( joinorleave==2?(<a href="javascript:void(0);" class="flex items-center justify-center h-9 px-5 rounded-md bg-red-600 text-white  space-x-1.5">
+			 ( joinorleave==2?(<a href="javascript:void(0);" onClick={leavegroup}  class="flex items-center justify-center h-9 px-5 rounded-md bg-red-600 text-white  space-x-1.5">
 		<ion-icon name="arrow-undo-outline"></ion-icon>
-			<span>  <button type="submit" onClick={leavegroup} > Leave Group </button>  </span>
-		</a>):(<a  href="javascript:void(0);"class="flex items-center justify-center h-9 px-5 rounded-md bg-blue-600 text-white  space-x-1.5">
+			<span>  <button type="submit"  > Leave Group </button>  </span>
+		</a>):(<a  href="javascript:void(0);"class="flex items-center justify-center h-9 px-5 rounded-md bg-blue-600 text-white  space-x-1.5" onClick={joingroup}>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5">
 				<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
 			</svg>
-			<span> <button type="submit" onClick={joingroup} > Join </button> </span>
+			<span> <button type="submit"  > Join </button> </span>
 		</a>) )
 			
 		}
