@@ -51,7 +51,25 @@ const RegisterScreen = ({history}) =>{
     }
 
     return(
-            <body style={{background:"#f3f4f6",height:"650px"}}>
+            <body style={{background:"#f3f4f6",height:"850px"}}>
+                <div class="bg-white py-4 shadow dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto">
+
+
+                <div class="flex items-center lg:justify-between justify-around" style={{height:'30px'}}>
+
+                    <a href="trending.html">
+                        <img src="assets/user/images/logoo.png" alt="" class="w-32" style={{width: '80px'}}/>
+                    </a>
+
+                    <div class="capitalize flex font-semibold  lg:block my-2 space-x-3 text-center text-sm">
+                    <Link to="/login">  <a href="javascript:void(0);" class="py-3 px-4">Login</a> </Link>
+                        <Link to="/register" style={{color:'white'}}>  <a href="javascript:void(0);" class="bg-blue-500 blue-500 px-6 py-3 rounded-md shadow text-white" >Register</a> </Link>
+                    </div>
+
+                </div>
+            </div>
+        </div>
                 <div class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
                     <form onSubmit={registerHandler} class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md">
                         <h1 class="lg:text-2xl text-xl font-semibold mb-6"> Register </h1>
@@ -77,7 +95,7 @@ const RegisterScreen = ({history}) =>{
                             <button type="submit" class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
                                 Register</button>
                         </div>
-                        <span>Already have an account ? <Link to="/login">Login</Link> </span>
+                     
                     </form>
 
 
