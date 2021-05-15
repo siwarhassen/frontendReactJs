@@ -50,7 +50,7 @@ export default function PostItem({ post, key }) {
     axios.get("https://aaweni.herokuapp.com/pi/commentRoute/nbcomment/" + post._id).then((res) => {
       setnbComments(res.data.nbcomments);
     });
-    const socket = io.connect("wss://aaweni.herokuapp.com");
+    const socket = io.connect("https://aaweni.herokuapp.com/");
     setSocket(socket);
 
     return () => socket.close();
@@ -210,9 +210,12 @@ export default function PostItem({ post, key }) {
               />
             </a>
             <div class="flex-1 font-semibold capitalize">
+            <Link to={`/userdetails/${post.username._id} `}> 
               <a href="#" class="text-black">
+                
                 {post.username.username}
               </a>
+              </Link>
               <div class="text-gray-700 flex items-center space-x-2">
                 <Moment fromNow>{post.createdAt}</Moment>
                 <ion-icon name="people"></ion-icon>
