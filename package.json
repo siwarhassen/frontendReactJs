@@ -4,6 +4,7 @@
     "private": true,
     "proxy": "https://aaweni.herokuapp.com",
     "scripts": {
+         "sitemap": "babel-node ./sitemap-generator.js",
         "start": "react-scripts start -o",
         "build": "react-scripts build",
         "test": "react-scripts test",
