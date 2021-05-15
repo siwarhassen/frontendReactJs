@@ -48,7 +48,7 @@ const dispatch = useDispatch();
               </div>
               <div class="flex flex-1 items-start space-x-4 p-5">
                 <img
-                  src="assets/user/images/logoo.png"
+                  src={connecteduser.profilePicture}
                   class="bg-gray-200 border border-white rounded-full w-11 h-11"
                 />
                 <div class="flex-1 pt-2">
