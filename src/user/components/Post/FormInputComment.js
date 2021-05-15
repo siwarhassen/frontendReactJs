@@ -36,9 +36,10 @@ export default function FormInputComment({ id, socket, setreply, send, name }) {
           class="bg-transparent max-h-10 shadow-none px-5"
           ref={contentRef}
         ></input>
+        
       </div>
-      <button ref={bouton} onClick={commentSubmit}>
-        Send
+      <button ref={bouton} onClick={commentSubmit} style={{marginLeft:"490px"  , marginTop:"-58px"}}>
+      <ion-icon name="send" style={{color:'blue' }} ></ion-icon>
       </button>
     </div>
   );
