@@ -331,7 +331,14 @@ const id = match.params.id;
                                 <li ><Link to={`/userdetailsS/${user._id}`} >Skills</Link></li> 
                             </ul>
                         </nav>
-
+                        <div class="flex items-center space-x-1.5 flex-shrink-0 pr-3  justify-center order-1">
+                            {/**<a href="#" class="text-blue-500"> See all </a> */} 
+                            <Link to={`/chat/${user._id}`} >  <button  class="flex items-center justify-center h-10 px-5 rounded-md bg-purple-500 text-white  space-x-1.5"> 
+                               
+                                <span>  <ion-icon name="send"></ion-icon> Message </span>
+                            </button>  
+                            </Link>
+                        </div>
                         <div class="flex items-center space-x-1.5 flex-shrink-0 pr-3  justify-center order-1">
                             {/**<a href="#" class="text-blue-500"> See all </a> */} 
                             <button  onClick={inviHandler} class="flex items-center justify-center h-10 px-5 rounded-md bg-blue-600 text-white  space-x-1.5"> 
@@ -341,6 +348,7 @@ const id = match.params.id;
                                 <span> {etat} </span>
                             </button>  
                         </div>
+                       
                     </div>
 
                 </div>
