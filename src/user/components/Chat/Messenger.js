@@ -223,7 +223,7 @@ const Messenger = (props) => {
                                         
                                     <div class="message-bubble " >
                                     <div class="message-bubble-inner">
-                                    <div class="message-avatar"><img src={received?.receiver?.profilePicture} alt=""/> </div>
+                                    <div class="message-avatar"><img src={received?.sender?.profilePicture} alt=""/> </div>
                                 <div class="message-text"  title={moment(received?.createdAt).format('dd.MM.yyyy HH:mm:ss')}  ><p>{received?.message}</p></div>
                                
                                     </div>
