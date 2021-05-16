@@ -630,7 +630,7 @@ const deletefav = (id) =>async () => {
                          
                                 <h3 class="mb-8 mt-20 font-semibold text-xl" style={{color: "orange"}}> Add your review </h3>
                                 <div class="flex space-x-4 mb-5 relative">
-                                    <img src="http://localhost:3000/uploads/avatar-1.jpg" alt="" class="rounded-full shadow w-12 h-12"/>
+                                    <img src={user?.profilePicture} alt="" class="rounded-full shadow w-12 h-12"/>
                                     <div class="flex-1">
                                     <form  onSubmit={(e)=>{
                                     e.preventDefault()
