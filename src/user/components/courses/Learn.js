@@ -70,7 +70,7 @@ export default function Learn({match}) {
           <h1  class="uk-heading-line uk-text-center" style={{marginTop:"-220px"}}>{sec?.Name}</h1>
          <p  uk-responsive="" class="uk-responsive-width">{sec?.Description}</p>
           {/* <iframe src="https://www.youtube.com/embed/9gTw2EDkaDQ?enablejsapi=1" frameborder="0" uk-video="automute: true" allowfullscreen="" uk-responsive="" class="uk-responsive-width"></iframe>**/}
-          <a href={ process.env.REACT_APP_API_URL_OUH + "/" + sec?.ContentInformation}  download target="_blank">
+          <a href={  "https://3aweni.netlify.app/assets/uploads/" + sec?.ContentInformation}  download target="_blank">
           <button >
       <i class="icon-feather-folder .icon-tiny"/>
       Download File
@@ -88,7 +88,7 @@ export default function Learn({match}) {
 
         <div>
         <h1  class="uk-heading-line uk-text-center" >{sec?.Name}</h1>
-    <iframe src={process.env.REACT_APP_API_URL_OUH + "/" + sec?.ContentInformation} frameborder="0" uk-video="automute: true" allowfullscreen="" uk-responsive="" class="uk-responsive-width" style={{width:"1000px",height:"500px"}}></iframe>
+    <iframe src={"https://3aweni.netlify.app/assets/uploads/" + sec?.ContentInformation} frameborder="0" uk-video="automute: true" allowfullscreen="" uk-responsive="" class="uk-responsive-width" style={{width:"1000px",height:"500px"}}></iframe>
     </div>
     )}
      
