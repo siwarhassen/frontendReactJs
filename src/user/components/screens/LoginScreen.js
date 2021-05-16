@@ -80,7 +80,7 @@ const LoginScreen = ({history}) =>{
 
 
     
-            <body style={{background:"#f3f4f6",height:"650px"}}>
+            <body style={{background:"#040D21",height:"650px"}}>
             <div id="wrapper" class="flex flex-col justify-between h-screen">
         
               
@@ -95,16 +95,22 @@ const LoginScreen = ({history}) =>{
                     </a>
 
                     <div class="capitalize flex font-semibold  lg:block my-2 space-x-3 text-center text-sm">
-                    <Link to="/login">  <a href="form-login.html" class="py-3 px-4">Login</a> </Link>
+                    <Link to="/login">  <a href="javascript:void(0);" class="py-3 px-4">Login</a> </Link>
                         <Link to="/register" style={{color:'white'}}>  <a href="javascript:void(0);" class="bg-blue-500 blue-500 px-6 py-3 rounded-md shadow text-white" >Register</a> </Link>
                     </div>
 
                 </div>
             </div>
         </div>
+<div>
 
-     
-        <div class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-" style={{width:'600px' }} >
+        <video class="video-globe" loop="true" width="570" height="570"  autoplay="autoplay"  style={{marginLeft:"647px" , position: "relative" }} >
+  <source src="https://res.cloudinary.com/espritnn/video/upload/v1621197068/globe-900.h264_mtaw2q.mp4" type="video/mp4" />
+</video>
+<img src="https://res.cloudinary.com/espritnn/image/upload/v1621196984/astro-mona_jbcjs6.webp" style={{marginLeft:"920px",  position: "absolute", marginTop:"-220px" ,width:"480px" }} alt="not-fount"></img>
+      
+</div>
+        <div class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-" style={{width:'600px' , marginTop:"80px",position: "absolute"}} >
                     <form onSubmit={loginHandler} class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md">
                         <h1 class="lg:text-2xl text-xl font-semibold mb-6"> Login </h1>
                         
@@ -149,9 +155,15 @@ const LoginScreen = ({history}) =>{
                         />
                     </form>
                 </div>
-       
-                <div class="page-content-inner " >
-
+              <div class="page-content-inner " >
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <div class="section-small text-md-left text-center" >
     <div class="uk-child-width-1-2@m uk-gird-large uk-flex-middle uk-grid" uk-grid="">
         <div class="uk-first-column">
@@ -245,4 +257,3 @@ Under the leadership <br/> of infinity Code, 3aweni operates a diverse business 
 }
 
 export default LoginScreen;
-
