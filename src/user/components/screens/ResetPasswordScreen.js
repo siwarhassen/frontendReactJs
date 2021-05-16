@@ -53,7 +53,8 @@ const ResetPasswordScreen = ({history, match}) =>{
                   onScreen: true
                 }
               });
-              history.goBack();
+              
+            window.location.href = "https://3aweni.netlify.app/login";
         } catch (error) {
             setError(error.response.data.error);
             setTimeout(() => {
@@ -85,7 +86,7 @@ const ResetPasswordScreen = ({history, match}) =>{
                         {error && <span style={{color:'red'}}>{error}</span>}
                         <div>
                             <button type="submit" class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
-                                Reset Email</button>
+                                Reset Password</button>
                         </div>
                     </form>
                 </div>
