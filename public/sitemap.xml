@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://3aweni.netlify.app/</loc> </url>
-<url> <loc>https://3aweni.netlify.app/login</loc> </url>
-<url> <loc>https://3aweni.netlify.app/forgotpassword</loc> </url>
-<url> <loc>https://3aweni.netlify.app/register</loc> </url>
-<url> <loc>https://3aweni.netlify.app/api/auth/resetpassword/:token</loc> </url>
-<url> <loc>https://3aweni.netlify.app/</loc> </url>
-<url> <loc>https://3aweni.netlify.app/edit_info_user</loc> </url>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.84 http://www.google.com/schemas/sitemap/0.84/sitemap.xsd">
+<url><loc>https://3aweni.netlify.app/</loc><lastmod>2021-5-9</lastmod><changefreq>Weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://3aweni.netlify.app/login</loc><changefreq>Weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://3aweni.netlify.app/register</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/edit_info_user</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/jobs</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/addjob</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/problems</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/addproblem</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/profile_education</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/homecourse</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/addcourse</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://3aweni.netlify.app/profile_projet</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url>  
+<url><loc>https://3aweni.netlify.app/profile_experience</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url> 
+<url><loc>https://3aweni.netlify.app/profile_education</loc><changefreq>Weekly</changefreq><priority>0.5</priority></url> 
 </urlset>
