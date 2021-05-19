@@ -3,7 +3,8 @@ import {Link } from 'react-router-dom';
 import axios from 'axios';
 import "./screen.css";
 import { GoogleLogin } from 'react-google-login';
-
+import {Dialog,Button,DialogActions,DialogContent,DialogContentText,DialogTitle } from '@material-ui/core';
+import VideoInput from './VideoInput';
 /*const initialState = {
     email: '',
     password: '',
@@ -15,7 +16,15 @@ const LoginScreen = ({history}) =>{
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
     const [error, setError]= useState("");
+    const [open, setOpen] = React.useState(false);
 
+    const handleClickOpen = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
     
 
     useEffect(() => {
@@ -127,11 +136,37 @@ const LoginScreen = ({history}) =>{
                            
                         </div>
                         {error && <span style={{color:'red'}}>{error}</span>}
+                        <div style={{display:"flex"}}>
                         <button type="submit" tabIndex={3} class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full" >
                                 Login</button>
-                         
-                    
+                                <button type="button"  onClick={handleClickOpen}  class="bg-green-500 font-semibold p-2 mt-5 rounded-md text-center text-white w-full" >
+                                     Login With Face ID</button>
+                                     </div> 
+
+
+                                     <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+      >
+          <DialogActions>
+          <Button onClick={handleClose} color="primary" autoFocus>
+          X
+          </Button>
+          </DialogActions>
+      
+          <DialogContent>
+          <DialogContentText id="alert-dialog-description" style={{overflowY:"scroll" , overflow: "hidden"}}>
+            
+       <VideoInput/>
+           
+          </DialogContentText>
+          </DialogContent>
+          
+      </Dialog>
                         <br/>
+                       
                         &nbsp; 
                         &nbsp;
                         &nbsp;
@@ -153,6 +188,7 @@ const LoginScreen = ({history}) =>{
                             cookiePolicy={'single_host_origin'}
                             style={{zIndex:50}}
                         />
+                       
                     </form>
                 </div>
               <div class="page-content-inner " >
