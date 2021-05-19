@@ -326,9 +326,19 @@ const userconnected = localStorage.getItem("connecteduser");
        .then(res=>res.json())
        .then(data=>{
           setUrl(data.url)
-            localStorage.setItem('profile-pic', data.url);
+         let pic=data.url.substr(6,data.url.length);
+        if (data.url.includes("https")){
+              localStorage.setItem('profile-pic', data.url);
        localStorage.setItem('email',  user.email);
       window.location.href = "https://3aweni.netlify.app/photo";
+        }
+        else{
+          
+            localStorage.setItem('profile-pic', "https:/"+pic);
+      localStorage.setItem('email',  user.email);
+      window.location.href = "https://3aweni.netlify.app/photo";
+        }
+     
        })
        .catch(err=>{
            console.log(err)
@@ -369,8 +379,8 @@ const userconnected = localStorage.getItem("connecteduser");
     })
     .then(res=>res.json())
     .then(data=>{
-       setUrlc(data.url)
-       console.log(data);
+       setUrlc(data.url);
+
     })
     .catch(err=>{
         console.log(err)
