@@ -326,7 +326,9 @@ const userconnected = localStorage.getItem("connecteduser");
        .then(res=>res.json())
        .then(data=>{
           setUrl(data.url)
-          console.log(data);
+            localStorage.setItem('profile-pic', data.url);
+       localStorage.setItem('email',  user.email);
+      window.location.href = "https://3aweni.netlify.app/photo";
        })
        .catch(err=>{
            console.log(err)
