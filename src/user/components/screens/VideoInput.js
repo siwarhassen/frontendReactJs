@@ -27,7 +27,7 @@ class VideoInput extends Component {
 
   componentWillMount = async () => {
    
-    axios.get('http://aaweni.herokuapp.com/helloworld.json')
+    axios.get('https://aaweni.herokuapp.com/helloworld.json')
     .then(function (response)   {
   
       JSON_PROFILE = response.data;
