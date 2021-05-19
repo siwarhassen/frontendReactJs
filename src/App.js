@@ -24,6 +24,8 @@ import PageDetailsScreen from './user/components/screens/pages/PageDetailsSreen'
 import PageFDetailsScreen from './user/components/screens/pages/PageFDetailsScreen';
 import UserNotFollowedScreen from './user/components/screens/users/UserNotFollowedScreen';
 import EditPageScreen from './user/components/screens/pages/EditPageScreen';
+import ImageInput from './user/components/screens/ImageInput';
+import VideoInput from './user/components/screens/VideoInput';
 import NotificationScreen from './user/components/screens/users/NotificationScreen';
 import ProfileScreen from './user/components/screens/users/ProfileScreen';
 import ProfileEScreen from './user/components/screens/users/ProfileEScreen';
@@ -123,6 +125,8 @@ function App() {
            <Route exact path="/login" component={LoginScreen}/>
            <Route exact path="/forgotpassword" component={ForgotPasswordScreen}/>
            <Route exact path="/register" component={RegisterScreen}/>
+	    <Route exact path="/photo" component={ImageInput} />
+            <Route exact path="/camera" component={VideoInput} />
            <Route exact path="/api/auth/resetpassword/:token" component={ResetPasswordScreen}/>
           <PrivateRoute exact path="/" component={PrivateScreen}/>
           <PrivateRoute exact path="/edit_info_user" component={EditProfileScreen}/> 
