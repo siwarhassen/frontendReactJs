@@ -131,7 +131,7 @@ const deleteCourseEvent = (c) =>async () => {
 
 
 <div>
-
+ <Header />
 <div>
       </div>
 <div class="main_content">
