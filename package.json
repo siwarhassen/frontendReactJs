@@ -103,7 +103,8 @@
         "yup": "^0.32.9",
         "babel-polyfill": "^6.26.0",
         "url-search-params-polyfill": "^8.1.1",
-        "whatwg-fetch": "^3.6.2"
+        "whatwg-fetch": "^3.6.2",
+           "react-helmet": "^6.1.0"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
