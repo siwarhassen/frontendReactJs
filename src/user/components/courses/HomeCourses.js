@@ -132,7 +132,6 @@ const deleteCourseEvent = (c) =>async () => {
 
 <div>
 
-import { Helmet } from 'react-helmet'
  <Helmet>
         <html lang="en" />
         <title>My homepage</title>
