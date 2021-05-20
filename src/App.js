@@ -97,6 +97,7 @@ const Certification = React.lazy(() => import("./user/components/courses/Certifi
 const Consultusersincourse = React.lazy(() => import("./user/components/courses/Consultusersincourse"));
 const CourseChart = React.lazy(() => import("./user/components/courses/CourseChart"));
 const UpdateCourse = React.lazy(() => import("./user/components/courses/UpdateCourse"));
+import { Helmet } from 'react-helmet';
 function App() {
   const dispatch=useDispatch();
   useEffect(() => {
@@ -118,6 +119,11 @@ function App() {
   return (
 
     <div className="App">
+	   <Helmet>
+        <html lang="en" />
+        <title>My homepage</title>
+        <description>Description of your homepage.</description>
+      </Helmet>
            <BrowserRouter>
   <Suspense fallback={<p>...Loading page please wait</p>}>
 
