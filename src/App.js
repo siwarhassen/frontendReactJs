@@ -2,6 +2,7 @@ import React, { Suspense,useEffect } from "react";
 import logo from './logo.svg';
 import { BrowserRouter , Route, Switch } from "react-router-dom";
 import './App.css';
+import { Helmet } from 'react-helmet';
 import Header from './user/components/Header';
 import PrivateRoute from './user/components/routing/PrivateRoute';
 import PrivateScreen from './user/components/screens/PrivateScreen';
@@ -97,7 +98,7 @@ const Certification = React.lazy(() => import("./user/components/courses/Certifi
 const Consultusersincourse = React.lazy(() => import("./user/components/courses/Consultusersincourse"));
 const CourseChart = React.lazy(() => import("./user/components/courses/CourseChart"));
 const UpdateCourse = React.lazy(() => import("./user/components/courses/UpdateCourse"));
-import { Helmet } from 'react-helmet';
+
 function App() {
   const dispatch=useDispatch();
   useEffect(() => {
