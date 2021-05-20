@@ -132,11 +132,6 @@ const deleteCourseEvent = (c) =>async () => {
 
 <div>
 
- <Helmet>
-        <html lang="en" />
-        <title>My homepage</title>
-        <description>Description of your homepage.</description>
-     </Helmet>
 <div>
       </div>
 <div class="main_content">
