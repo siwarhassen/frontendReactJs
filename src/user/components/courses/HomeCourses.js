@@ -11,6 +11,8 @@ import {fetchFavoris,populateFavoris, selectFavoris,setErrorsf,deleteFavoris} fr
 import {populateCourses, selectCourses,setErrors,deleteCourse,fetchCoursesofUser,selectCoursesofuser} from "../../../redux/slices/coursesSlice";
 import { FaAdjust } from 'react-icons/fa';
 import Header from'../Header';
+
+import { Helmet } from 'react-helmet';
 export default function HomeCourse() {
     const dispatch = useDispatch();
   
@@ -127,8 +129,15 @@ const deleteCourseEvent = (c) =>async () => {
         return (
           
 
+
 <div>
- <Header />
+
+import { Helmet } from 'react-helmet'
+ <Helmet>
+        <html lang="en" />
+        <title>My homepage</title>
+        <description>Description of your homepage.</description>
+     </Helmet>
 <div>
       </div>
 <div class="main_content">
