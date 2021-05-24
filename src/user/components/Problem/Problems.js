@@ -10,6 +10,7 @@ import { getTop6Contrib } from "../../../redux/actions/commentAction";
 import { getProblemsByUser } from "../../../redux/actions/problemAction";
 import ProblemItem from "./ProblemItem";
 import Header from'../Header';
+import {Link} from 'react-router-dom';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 
@@ -226,9 +227,9 @@ export default function Problems() {
                               alt=""
                               class="w-8 h-8 rounded-full"
                             />
-                            <a href="#" class="font-semibold">
+                            <Link to={`/userdetails/${user._id}`} class="font-semibold">
                               {user._id.username}
-                            </a>
+                            </Link>
                             <div class="flex items-center space-x-2">
                               <ion-icon
                                 name="chatbubble-ellipses-outline"
