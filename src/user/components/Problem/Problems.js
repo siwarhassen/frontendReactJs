@@ -227,7 +227,7 @@ export default function Problems() {
                               alt=""
                               class="w-8 h-8 rounded-full"
                             />
-                            <Link to={`/userdetails/${user._id}`} class="font-semibold">
+                            <Link to={`/userdetails/${user._id._id}`} class="font-semibold">
                               {user._id.username}
                             </Link>
                             <div class="flex items-center space-x-2">
