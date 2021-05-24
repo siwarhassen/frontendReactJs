@@ -225,7 +225,7 @@ const UserNotFollowedScreen = ({history}) =>{
 <div class="main_content">
 <div class="mcontainer">
 
-    <div class="lg:flex lg:space-x-10">
+    <div >
           
         <div > 
             <div class="flex justify-between relative md:mb-4 mb-3">
