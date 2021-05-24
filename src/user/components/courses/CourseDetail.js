@@ -572,9 +572,13 @@ const deletefav = (id) =>async () => {
                                 <h3 class="mb-8 mt-20 font-semibold text-2xl" style={{color: "#0cb9c1"}}> Reviews ({reviews?.length}) </h3>
                                { reviews?.map((rev, index) => (
                                 <div class="flex gap-x-4 mb-5 relative" key={rev?._id}>
+                                  <Link to={`/userdetails/${rev?.UserId?._id}`}>
                                     <img src={rev?.UserId?.profilePicture}  alt="" class="rounded-full shadow w-12 h-12"/>
+                                     </Link>
                                     <div>
+                                     <Link to={`/userdetails/${rev?.UserId?._id}`}>
                                         <h4 class="text-base m-0"> {rev?.UserId?.username}</h4>
+                                      </Link>
                                         <span class="text-gray-700 text-sm"> {dateFormat(rev?.DateCreation, "mmmm dS, yyyy")} </span>
                                         <p class="mt-3">
                                             {rev?.Content}
