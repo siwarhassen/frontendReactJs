@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import UpdateComment from "../Problem/UpdateComment";
+import {Link} from 'react-router-dom';
 //const userconnected = localStorage.getItem("connecteduser");
 import {fetchconnectuser,selectoneuser,selectSessionUser} from "../../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,7 +38,8 @@ export default function CommentCardPost({ children, comment, socket }) {
       <div>
         <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 relative lg:ml-5 ml-2 lg:mr-12  dark:bg-gray-800 dark:text-gray-100">
           <p class="leading-6" style={{ marginBottom: "unset" }}>
-            <strong>{comment.username.username}</strong> {comment.description}
+              <Link to={`/userdetails/${comment.username._id}`}>
+            <strong>{comment.username.username}</strong></Link> {comment.description}
             {allow && (
               <div style={{ float: "right" }}>
                 <a href="#">
