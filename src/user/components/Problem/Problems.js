@@ -10,7 +10,7 @@ import { getTop6Contrib } from "../../../redux/actions/commentAction";
 import { getProblemsByUser } from "../../../redux/actions/problemAction";
 import ProblemItem from "./ProblemItem";
 import Header from'../Header';
-import {Link} from 'react-router-dom';
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 
