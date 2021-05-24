@@ -71,8 +71,11 @@ export default function Coursesofuser({match}) {
                     
 
                     <div class="blog-article-auther">
-                        <img src={user?.ProfilePicture} alt=""/>
+                        <img src={user?.profilePicture} alt=""/>
+                        <Link
+                       to={`/userdetails/${user?._id}`}>
                         <span class="blog-auther-user-name">{user?.username}</span>
+                        </Link>
                     </div>
 
                 </div>
