@@ -182,11 +182,11 @@ const deleteCourseEvent = (c) =>async () => {
                                      {courses?.map((cours, index) => (
                             <li key={cours._id}>
                                 <div>
-                                    <a href="course-intro.html" class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
+                                    <Link to={`/detailcourse/${cours._id}`} class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
                                         <img src={cours.Photo} alt="My online courses"  class="w-full h-full absolute inset-0 object-cover"/>
                                         
                                        
-                                    </a>
+                                    </Link>
                                     <div class="pt-3">
                                         <Link to={`/detailcourse/${cours._id}`} class="font-semibold line-clamp-2"> {cours.Name} </Link>
                                         <div class="pt-2">
