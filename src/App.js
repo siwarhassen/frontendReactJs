@@ -32,7 +32,7 @@ import ProfileScreen from './user/components/screens/users/ProfileScreen';
 import ProfileEScreen from './user/components/screens/users/ProfileEScreen';
 import ProfilePScreen from './user/components/screens/users/ProfilePScreen';
 import ProfileSScreen from './user/components/screens/users/ProfileSScreen';
-import ProfileSScreen from './user/components/screens/users/ProfileSScreen';
+
 import PostScreen from './user/components/screens/users/ProfilePostScreen';
  
 import EditEducationScreen from './user/components/screens/profile/EditEducationScreen';
