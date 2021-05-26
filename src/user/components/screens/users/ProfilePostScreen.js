@@ -384,7 +384,7 @@ const id = match.params.id;
                             </div>
                             )})}
                           </div>
-                          <a class="text-blue-600 "></a><a href="#" class="bg-gray-100 py-2.5 text-center font-semibold w-full mt-4 block rounded"> See all </a>
+                        
                       </div>
 
                         {/*<!-- end friends -->*/}
