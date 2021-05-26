@@ -32,6 +32,9 @@ import ProfileScreen from './user/components/screens/users/ProfileScreen';
 import ProfileEScreen from './user/components/screens/users/ProfileEScreen';
 import ProfilePScreen from './user/components/screens/users/ProfilePScreen';
 import ProfileSScreen from './user/components/screens/users/ProfileSScreen';
+import ProfileSScreen from './user/components/screens/users/ProfileSScreen';
+import PostScreen from './user/components/screens/users/ProfilePostScreen';
+ 
 import EditEducationScreen from './user/components/screens/profile/EditEducationScreen';
 import EditProjetScreen from './user/components/screens/profile/EditProjetScreen';
 import EditExperienceScreen from './user/components/screens/profile/EditExperienceScreen';
@@ -133,6 +136,8 @@ function App() {
            <Route exact path="/api/auth/resetpassword/:token" component={ResetPasswordScreen}/>
           <PrivateRoute exact path="/" component={PrivateScreen}/>
           <PrivateRoute exact path="/edit_info_user" component={EditProfileScreen}/> 
+		  
+ 
           <PrivateRoute exact path="/profile_education" component={EducationScreen}/>
           <PrivateRoute exact path="/profile_projet" component={ProjetScreen}/>
           <PrivateRoute exact path="/profile_experience" component={ExperienceScreen}/>
@@ -151,6 +156,7 @@ function App() {
           <PrivateRoute exact path="/userdetailsP/:id" component={ProfilePScreen}/>
           <PrivateRoute exact path="/editeducation/:id" component={EditEducationScreen}/>
           <PrivateRoute exact path="/userdetailsS/:id" component={ProfileSScreen}/>
+		   <PrivateRoute exact path="/userdetailsposts/:id" component={PostScreen}/>
           <PrivateRoute exact path="/editexperience/:id" component={EditExperienceScreen}/>
           <PrivateRoute exact path="/editproject/:id" component={EditProjetScreen}/>
           <PrivateRoute exact path="/statistic" component={chartScreen}/>
