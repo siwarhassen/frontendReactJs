@@ -268,7 +268,7 @@ const id = match.params.id;
                     <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row">
                         <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
                             <ul>
-                                <li ><a href="#0">Posts</a></li>
+                                  <li ><a  Link to={`/userdetailsposts/${user._id}`}>Posts</Link></li>
                                 <li ><Link to={`/userdetails/${user._id}`} >Educations</Link></li>
                                 <li ><Link to={`/userdetailsE/${user._id}`} >Experiences </Link></li>
                                 <li class="active"><Link to={`/userdetailsP/${user._id}`} >Projects </Link></li>
