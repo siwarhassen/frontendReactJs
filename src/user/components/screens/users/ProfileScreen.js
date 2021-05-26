@@ -324,8 +324,8 @@ const id = match.params.id;
                     <div class="flex justify-between lg:border-t flex-col-reverse lg:flex-row">
                         <nav class="cd-secondary-nav pl-2 is_ligh -mb-0.5 border-transparent">
                             <ul>
-                                 <li class="active"><  Link to={`/userdetailsposts/${user._id}`}>Posts</Link></li>
-                                <li ><Link to={`/userdetails/${user._id}`} >Educations</Link></li>
+                                 <li >< Link to={`/userdetailsposts/${user._id}`}>Posts</Link></li>
+                                <li class="active"><Link to={`/userdetails/${user._id}`} >Educations</Link></li>
                                 <li ><Link to={`/userdetailsE/${user._id}`} >Experiences </Link></li>
                                 <li ><Link to={`/userdetailsP/${user._id}`} >Projects </Link></li>
                                 <li ><Link to={`/userdetailsS/${user._id}`} >Skills</Link></li> 
