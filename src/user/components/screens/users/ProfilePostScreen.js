@@ -375,12 +375,12 @@ const id = match.params.id;
                           { followers.map((val,key) => {
                                     return(
                                 <div key={key}>
-                              <a href="#">  
+                                <Link to={`/userdetails/${val._id}`}><a>  
                                   <div class="avatar relative rounded-md overflow-hidden w-full h-24 mb-2"> 
                                       <img src={val.profilePicture} alt="" class="w-full h-full object-cover absolute"/>
                                   </div>
                                   <div> {val.username} </div>
-                              </a>
+                              </a></Link>
                             </div>
                             )})}
                           </div>
