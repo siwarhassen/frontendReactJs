@@ -744,7 +744,7 @@ onSubmit={ async (values)=>{
 
                         <div class="profile_info">
                             <h1> {user.username} </h1>
-                            <p> Family , Food , Fashion , Fourever <a href="#">Edit </a></p>
+                            <p> {user.email}</p>
                         </div>
 
                     </div>
