@@ -15,7 +15,14 @@ import ReactPlayer from "react-player";
 import ListReactions from "./ListReactions";
 import { FacebookButton } from "react-social";
 import { Link } from "react-router-dom";
-
+import {
+   
+    FacebookShareButton,
+    LinkedinShareButton,
+    TwitterShareButton,
+  
+  } from "react-share";
+import { FacebookIcon, TwitterIcon,LinkedinIcon } from "react-share";
 let username = "607e1c25b6e3422b40b74213";
 const userconnected = localStorage.getItem("connecteduser");
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -444,20 +451,16 @@ export default function PostItem({ post, key }) {
 
             <a class="flex items-center space-x-2 flex-1 justify-end">
               <div class="p-2 rounded-full text-black lg:bg-gray-100">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  width="22"
-                  height="22"
-                  class="dark:text-gray-100"
-                >
-                  <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
-                </svg>
+                   
+              <FacebookShareButton
+      url={"https://3aweni.netlify.app"}
+    >
+      <FacebookIcon size={32} round />
+    </FacebookShareButton>
               </div>
-              <FacebookButton url={url} appId={appId}>
+              <p>
                 Share
-              </FacebookButton>
+              </p>
             </a>
           </div>
           <div class="flex items-center space-x-3 pt-2">
