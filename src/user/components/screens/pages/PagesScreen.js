@@ -83,7 +83,7 @@ const PagesScreen = ({history}) =>{
                         <h2 class="text-xl font-semibold"> Categories </h2>
                         <p class="font-medium text-gray-500 leading-6"> Find a page by browsing top categories. </p>
                     </div>
-                    <a href="#" class="text-blue-500 sm:block "> See all </a>
+                   
                 </div> 
 
                 <div class="relative -mt-3" uk-slider="finite: true">
