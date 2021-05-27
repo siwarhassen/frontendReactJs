@@ -460,9 +460,7 @@ export default function PostItem({ post, key }) {
       <FacebookIcon size={32} round />
     </FacebookShareButton>
               </div>
-              <p>
-                Share
-              </p>
+             
             </a>
           </div>
           <div class="flex items-center space-x-3 pt-2">
