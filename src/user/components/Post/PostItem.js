@@ -453,7 +453,9 @@ export default function PostItem({ post, key }) {
               <div class="p-2 rounded-full text-black lg:bg-gray-100">
                    
               <FacebookShareButton
-      url={"https://3aweni.netlify.app"}
+                
+              imageURL={upload}
+              quote={postItem.description} 
     >
       <FacebookIcon size={32} round />
     </FacebookShareButton>
