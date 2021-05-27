@@ -10,6 +10,8 @@ import { store } from 'react-notifications-component';
 import { fetchMyPages } from '../../../../redux/slices/mypagesSlice';
 import { useDispatch } from 'react-redux';
 import { fetchPages } from '../../../../redux/slices/pagesSlice';
+import HeaderWithoutLeftPanel from '../../HeaderWithoutLeftPanel';
+import LeftPanelPage from '../../LeftPanelPage';
 const CreatePageScreen = ({history}) =>{
 
     const dispatch =useDispatch();
@@ -46,7 +48,8 @@ const CreatePageScreen = ({history}) =>{
     
     return (
         <>
-        <Header/>
+          <HeaderWithoutLeftPanel/>
+        <LeftPanelPage/>
         <body>
         <ReactNotification/>
         <div class="main_content">

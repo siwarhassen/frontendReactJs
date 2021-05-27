@@ -18,6 +18,8 @@ import youtube from '../courses/Youtube';
 import {selectReviewsCourse,addReview,setErrorsR,deleteReview,selectsumreviews} from "../../../redux/slices/reviewscourseSlice";
 import { reach } from 'yup';
 import axios from 'axios';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 export default function CourseDetail({match}) {
     
  
@@ -220,7 +222,8 @@ const deletefav = (id) =>async () => {
           
 
 <div>
- <Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
 <div class="main_content">
             <div class="mcontainer">
 

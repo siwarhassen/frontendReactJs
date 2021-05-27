@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../Header';
 import { Card,Button,Accordion,ListGroup } from 'react-bootstrap';
+import HeaderWithoutLeftPanel from '../../HeaderWithoutLeftPanel';
+import LeftPanelPage from '../../LeftPanelPage';
 const PageDetailsScreen = ({history,match}) =>{
     const [page, setPage]= useState(Object);
     const [number, setNumber]= useState(0);
@@ -159,7 +161,8 @@ const PageDetailsScreen = ({history,match}) =>{
 
     return (
         <>
-        <Header/>
+         <HeaderWithoutLeftPanel/>
+        <LeftPanelPage/>
     <body>
     <div id="wrapper">
     <div class="main_content">

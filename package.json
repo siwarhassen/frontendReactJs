@@ -4,7 +4,7 @@
     "private": true,
     "proxy": "https://aaweni.herokuapp.com",
     "scripts": {
-         "sitemap": "babel-node ./sitemap-generator.js",
+        "sitemap": "babel-node ./sitemap-generator.js",
         "start": "react-scripts start -o",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -104,13 +104,12 @@
         "babel-polyfill": "^6.26.0",
         "url-search-params-polyfill": "^8.1.1",
         "whatwg-fetch": "^3.6.2",
-           "react-helmet": "^6.1.0",
-         "gatsby-plugin-react-helmet": "^4.5.0"
+        "react-helmet": "^6.1.0",
+        "gatsby-plugin-react-helmet": "^4.5.0"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-react": "^6.24.1"
     }
-}  
- 
+}

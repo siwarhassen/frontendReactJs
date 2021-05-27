@@ -6,6 +6,8 @@ import {Bar, Line, Pie} from 'react-chartjs-2';
 import {useDispatch, useSelector} from "react-redux";
 import { selectMyPages} from "../../../../redux/slices/mypagesSlice";
 import { selectFollowerpages} from "../../../../redux/slices/followerpageSlice";
+import HeaderWithoutLeftPanel from '../../HeaderWithoutLeftPanel';
+import LeftPanelPage from '../../LeftPanelPage';
 const PagesScreen = ({history}) =>{
     
     
@@ -77,7 +79,8 @@ const PagesScreen = ({history}) =>{
 
     return (
         <>
-        <Header/>
+          <HeaderWithoutLeftPanel/>
+        <LeftPanelPage/>
     <body>
     <div id="wrapper">
         <div class="main_content">

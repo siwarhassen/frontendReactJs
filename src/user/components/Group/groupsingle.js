@@ -30,14 +30,12 @@ const [members, erre, reloads] = useApi("groupmember/members/"+id);
         
                         
                                         <div class="flex mt-3 space-x-2 text-sm">
-                                            <a href="#" class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize"> 
-                                                Join 
+                                            <a  class="bg-gray-200 flex flex-1 h-8 items-center justify-center rounded-md capitalize"> 
+                                          
+                                            {group?.Type} 
+                                             
                                             </a>
-                                            <a href="#" class="bg-gray-200 flex flex-1 h-8 items-center justify-center rounded-md capitalize"> 
-                                            <Link to={`/group/${group?._id}`} >
-                                                View 
-                                                </Link>
-                                            </a>
+                                            
                                         </div>    
         
                                     </div>

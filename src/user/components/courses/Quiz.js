@@ -9,6 +9,8 @@ import Select from 'react-select';
 import { array } from "yup/lib/locale";
 import { useHistory } from "react-router-dom";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelCourse from "../LeftPanelCourse";
  
 export default function Quiz({match}) {
  let interval=useRef;
@@ -193,7 +195,8 @@ useEffect(async() => {
  
   return (
     <div >
-    <Header />
+   <HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
       <div >
  
       <br/><br/><br/><br/>

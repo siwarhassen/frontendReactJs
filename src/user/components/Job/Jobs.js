@@ -9,6 +9,8 @@ import { getcategories } from "../../../redux/actions/categorypAction";
 import { getJobs, deleteJob, searchjobs } from "../../../redux/actions/jobAction";
 import JobItem from "./JobItem";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelJob from "../LeftPanelJob";
 export default function Jobs() {
   const dispatch = useDispatch();
   const typeRef = useRef();
@@ -81,7 +83,8 @@ export default function Jobs() {
 
   return (
     <body>
-    <Header />
+    <HeaderWithoutLeftPanel />
+             <LeftPanelJob/>
       <div class="main_content">
         <div class="mcontainer">
           <div class="lg:flex  lg:space-x-12">

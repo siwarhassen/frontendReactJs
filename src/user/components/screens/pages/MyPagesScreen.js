@@ -4,6 +4,8 @@ import axios from 'axios';
 import Header from '../../Header';
 import {useDispatch, useSelector} from "react-redux";
 import { selectMyPages, deleteMyPage} from "../../../../redux/slices/mypagesSlice";
+import HeaderWithoutLeftPanel from '../../HeaderWithoutLeftPanel';
+import LeftPanelPage from '../../LeftPanelPage';
 const MyPagesScreen = ({history}) =>{
 
     const [mypages,  err, reload] =useSelector(selectMyPages);
@@ -55,7 +57,8 @@ const MyPagesScreen = ({history}) =>{
     
     return (
         <>
-        <Header/>
+         <HeaderWithoutLeftPanel/>
+        <LeftPanelPage/>
         <body>
         <div class="main_content">
             <div class="mcontainer">

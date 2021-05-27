@@ -13,7 +13,8 @@ import {
 import Chatbox from '../Chat/Chatbox';
 import OpenChat from '../Chat/openchat';
 
-import Header from '../../../user/components/Header';
+import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
+import LeftPanelGroup from '../LeftPanelGroup';
 
 
 
@@ -25,9 +26,9 @@ export default function Newest() {
         return (
           
 <div>        
-<Header />
+<HeaderWithoutLeftPanel />
 
-
+<LeftPanelGroup/>
 {/* <!-- Main Contents --> */}
         <div class="main_content">
             <div class="mcontainer">

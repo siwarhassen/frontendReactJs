@@ -13,6 +13,8 @@ import { FaAdjust } from 'react-icons/fa';
 import Header from'../Header';
 
 import { Helmet } from 'react-helmet';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 export default function HomeCourse() {
     const dispatch = useDispatch();
   
@@ -131,7 +133,8 @@ const deleteCourseEvent = (c) =>async () => {
 
 
 <div>
- <Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
 <div>
       </div>
 <div class="main_content">

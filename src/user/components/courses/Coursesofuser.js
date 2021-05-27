@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import dateFormat from 'dateformat';
 import Header from'../Header'
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 export default function Coursesofuser({match}) {
     const id = match.params.id;
     const history = useHistory();
@@ -55,7 +57,8 @@ export default function Coursesofuser({match}) {
   
         return(
             <div >
-                  <Header />
+                 <HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
      <br/><br/><br/>
      <div style={{width:"1040px",marginLeft:"300px",height:"250px"}}  class="blog-article-single" data-src="assets/user/course/images/blog/img-8.jpg" uk-img="" >
      <button  onClick={() => {

@@ -13,7 +13,8 @@ import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import {addcourse} from "../../../redux/slices/coursesSlice";
 import { useHistory } from 'react-router';
-import Header from'../Header';
+import HeaderWithoutLeftPanel from'../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 
 export default function AddCourse() {
 const dispatch =useDispatch();
@@ -25,7 +26,8 @@ const history = useHistory();
           
 
 <div>
-<Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
     <div>jjjj</div>
 
 

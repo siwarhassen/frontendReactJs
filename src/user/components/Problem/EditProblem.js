@@ -9,7 +9,8 @@ import "../Job/addjob.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useLocation } from "react-router";
 import { NotificationContainer, NotificationManager } from "react-notifications";
-import Header from'../Header';
+import HeaderWithoutLeftPanel from'../HeaderWithoutLeftPanel';
+import LeftPanelProblem from'../LeftPanelProblem';
 
 function EditProblem({history}) {
   const location = useLocation((state) => state.problem);
@@ -33,7 +34,9 @@ setTimeout(function(){ history.push("/problems"); }, 1000);
   }, []);
 
   return (
-    <><Header/>
+    <>
+        <HeaderWithoutLeftPanel />
+    <LeftPanelProblem/>
     <body class="bg-gray-100">
       <Formik
         initialValues={location.state.problem}

@@ -13,6 +13,8 @@ import * as Yup from "yup";
 import { useDispatch ,useSelector} from 'react-redux';
 import {updatecourse} from "../../../redux/slices/coursesSlice";
 import { useHistory } from 'react-router';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 
 export default function UpdateCourse({match}) {
     const id = match.params.id;
@@ -94,7 +96,8 @@ const initialValues = {
                 return (
 
 <div>
-        <Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
 <div class="card" style={{marginLeft:"330px",width:"1000px",backgroundColor:"white"}}>
 <ReactNotification/>
                     <div class="card-header border-bottom-0 py-4" style={{marginTop:"100px"}}>

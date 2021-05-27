@@ -4,10 +4,11 @@ import {useSelector} from 'react-redux'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import "./file.css";
-import Header from "../Header";
+import LeftPanelUserAccepted from "../LeftPanelUserAccepted";
 import axios from 'axios'
 import {showErrmsg,showSuccessmsg} from '../utils/notification/Notification'
 import {isEmpty } from '../utils/validation/Validation'
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
 const initialState = {
     
     err: '',
@@ -57,7 +58,8 @@ try {
     return (
         <>
             <div className="App">
-          <Header />
+            <HeaderWithoutLeftPanel />
+                   <LeftPanelUserAccepted/>
          <body>
       <div class="main_content">
         <div class="mcontainer">

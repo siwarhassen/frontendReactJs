@@ -6,13 +6,14 @@ import {useDispatch, useSelector} from "react-redux";
 import { fetchGroups, selectGroups , searchgroupbyName} from "../../../redux/slices/groupsSlice";
 import Groupsingle from './groupsingle';
 import Groupmini from './groupmini';
-import Header from '../../../user/components/Header';
+import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
 import {
     slice, concat, 
   } from 'lodash';
 
 import Chatbox from '../Chat/Chatbox';
 import OpenChat from '../Chat/openchat';
+import LeftPanelGroup from '../LeftPanelGroup';
 
 
 
@@ -40,7 +41,8 @@ export default function Mygroups() {
         return (
           
 <div>        
-<Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelGroup/>
 
 
 

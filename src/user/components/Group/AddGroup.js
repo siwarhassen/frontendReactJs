@@ -4,7 +4,9 @@ import {Link } from 'react-router-dom';
 import axios from 'axios';
 import Select from 'react-select'
 import { useHistory } from "react-router-dom";
-import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelGroup from '../LeftPanelGroup';
+
 const AddGroup = () =>{
     let history = useHistory();
     const [Name, setName]= useState("");
@@ -87,6 +89,7 @@ const AddGroup = () =>{
         
         <div>
          <HeaderWithoutLeftPanel />
+         <LeftPanelGroup/>
         <div class="FixedHeightContainer  rounded-md"  id="test" >
         <ion-icon name="desktop-outline" class="bg-gray-100 p-2 rounded-full text-2xl"  role="img" onClick={goDesk} aria-label="camera-outline"></ion-icon>
         <ion-icon name="phone-portrait-outline" class="bg-gray-100 p-2 rounded-full text-2xl"  role="img" onClick={goTel} aria-label="camera-outline"  ></ion-icon>

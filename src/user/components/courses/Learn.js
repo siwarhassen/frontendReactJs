@@ -3,6 +3,8 @@ import { queryApi } from "../../../utils/queryApi";
 import { useApi } from "../../../hooks/useApi";
 import { Link } from "react-router-dom";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 export default function Learn({match}) {
     const id = match.params.id;
     const [courses, err, reload] = useApi("course");
@@ -26,7 +28,9 @@ export default function Learn({match}) {
 
 
 
-<div> <Header /> 
+<div> 
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
 
 <div  style={{width:"1050px",marginLeft:"339px",marginTop:"-10px"}}>
 

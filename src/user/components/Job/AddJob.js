@@ -7,7 +7,8 @@ import { Input, FormFeedback, Button, InputGroupAddon } from "reactstrap";
 import { Formik, Form, FieldArray, Field, ErrorMessage } from "formik";
 import { NotificationContainer, NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
-import Header from'../Header';
+import HeaderWithoutLeftPanel from'../HeaderWithoutLeftPanel';
+import LeftPanelJob from '../LeftPanelJob';
 function AddJob({history}) {
   const [categories, setcategories] = useState([]);
   function handleFormSubmit(values, bag) {
@@ -57,7 +58,8 @@ function AddJob({history}) {
         }) => {
           return (
             <div>
-             <Header />
+             <HeaderWithoutLeftPanel />
+             <LeftPanelJob/>
               <div id="wrapper" class="flex flex-col justify-between h-screen">
                 <div class="bg-white py-4 shadow dark:bg-gray-800">
                   <div class="max-w-6xl mx-auto">

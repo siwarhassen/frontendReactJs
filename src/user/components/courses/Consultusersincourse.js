@@ -9,6 +9,8 @@ import {useDispatch, useSelector} from "react-redux";
 import Header from'../Header';
 import "react-alert-confirm/dist/index.css";
 import {populateUsercourse, selectUsercourses,fetchUserCourse,deleteUsercourse,fsortuserasc} from "../../../redux/slices/usercourseSlice";
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 export default function Consultusersincourse({match}) {
 
     const dispatch=useDispatch();
@@ -47,7 +49,8 @@ export default function Consultusersincourse({match}) {
         return (
           
 <div>
-  <Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
 <br/><br/><br/><br/><br/> 
 <button type="button" class="btn btn-secondary btn-icon-only" style={{marginRight:"590px"}}  onClick={() => {
                     history.goBack();

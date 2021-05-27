@@ -9,8 +9,9 @@ import {dispatchGetAllUsers_accepted,fetchAllUsersAccepted} from '../../../redux
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import Donut from 'react-donut';
 import Moment from 'react-moment';
-import Header from '../../../user/components/Header';
+import LeftPanelUserAccepted from '../LeftPanelUserAccepted';
 import { selectCvs } from '../../../redux/slices/cvSlice';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
 const initialState = {
     err:'',
     success:''
@@ -115,7 +116,8 @@ useEffect(() => {
   )
     return (
         <>
-          <Header/>
+              <HeaderWithoutLeftPanel />
+                   <LeftPanelUserAccepted/>
            <body>
 
 

@@ -6,13 +6,14 @@ import {useDispatch, useSelector} from "react-redux";
 import { selectGroups ,fetchGroups, searchgroupbyName , searchgroup} from "../../../redux/slices/groupsSlice";
 import Groupsingle from './groupsingle';
 import Groupmini from './groupmini';
-import Header from '../../../user/components/Header';
+import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
 import CreateRoom from "../videoChat/components/modal/CreateModal";
 import SquareButton from "../videoChat/components/buttons/SquareButton/SquareButton";
 
 
 import OpenChat from '../Chat/openchat';
 import JoinRoom from '../videoChat/components/modal/Join';
+import LeftPanelGroup from '../LeftPanelGroup';
 
 
 
@@ -55,8 +56,8 @@ export default function Groupes() {
         return (
           
 <div>        
-<Header />
-
+<HeaderWithoutLeftPanel />
+<LeftPanelGroup/>
 
       
 {/* <!-- Main Contents --> */}

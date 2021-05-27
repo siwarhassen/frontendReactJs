@@ -4,6 +4,8 @@ import { queryApi } from "../../../utils/queryApi";
 import { useApi } from "../../../hooks/useApi";
 import { Bar, Line ,Doughnut} from 'react-chartjs-2';
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelCourse from "../LeftPanelCourse";
 export default function CourseChart() {
   const [chartData,setChartData]=useState({});
 
@@ -48,7 +50,8 @@ const data={
 }
   return (
     <div >
- <Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
         <br/><br/><br/><br/><br/><br/>
         <div  style={{marginLeft:"400px",width:"720px"}} >
 <Bar   data={chartData}  options={{title:{display:true,text:"Most enrolled courses",fontSize:25}}}  /></div>

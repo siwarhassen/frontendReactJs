@@ -14,8 +14,9 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
-import Header from'../Header';
+import HeaderWithoutLeftPanel from'../HeaderWithoutLeftPanel';
 import { useDispatch, useSelector } from "react-redux";
+import LeftPanelProblem from "../LeftPanelProblem";
 
 function AddProblem({history}) {
   const dispatch = useDispatch();
@@ -49,7 +50,8 @@ function AddProblem({history}) {
 
   return (
     <body class="bg-gray-100">
-    <Header />
+    <HeaderWithoutLeftPanel />
+    <LeftPanelProblem/>
       <Formik
         initialValues={{ title: "", description: "", username: userconnected }}
         onSubmit={handleFormSubmit.bind(this)}

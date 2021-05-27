@@ -5,10 +5,11 @@ import { queryApi } from "../../../utils/queryApi";
 import { useApi } from "../../../hooks/useApi";
 import { useDispatch ,useSelector } from 'react-redux';
 import { useState} from 'react';
-import Header from '../../../user/components/Header';
+import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
 import { getPosts } from "../../../redux/actions/postAction";
 import AddPost from "../Post/AddPost";
 import PostItem from "../Post/PostItem";
+import LeftPanelGroup from '../LeftPanelGroup';
 
 export default function GroupTimeline({match}) {
 
@@ -164,8 +165,8 @@ async function applyupdate() {
           
 			
 <body>
-<Header />
-
+<HeaderWithoutLeftPanel />
+<LeftPanelGroup/>
 	<div>
 	  
 		<div class="main_content">

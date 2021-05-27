@@ -10,6 +10,8 @@ import { getTop6Contrib } from "../../../redux/actions/commentAction";
 import { getProblemsByUser } from "../../../redux/actions/problemAction";
 import ProblemItem from "./ProblemItem";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelProblem from "../LeftPanelProblem";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
@@ -71,7 +73,8 @@ export default function Problems() {
   console.log(topusers)
   return (
     <body>
-    <Header />
+       <HeaderWithoutLeftPanel />
+    <LeftPanelProblem/>
       <div id="wrapper">
         {/*<!-- Main Contents -->*/}
         <div class="main_content">

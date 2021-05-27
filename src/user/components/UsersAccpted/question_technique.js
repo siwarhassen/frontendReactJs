@@ -4,8 +4,8 @@ import "./file.css";
 import {showErrmsg,showSuccessmsg} from '../utils/notification/Notification'
 import axios from 'axios'
 import {isEmpty } from '../utils/validation/Validation'
-import Header from'../Header';
-
+import HeaderWithoutLeftPanel from'../HeaderWithoutLeftPanel';
+import LeftPanelUserAccepted from'../LeftPanelUserAccepted';
 
  export default function Question_Technique({match}){
     const initialState = {
@@ -72,7 +72,8 @@ let i=0
     return (
         <div>
           
-                   <Header />
+                   <HeaderWithoutLeftPanel />
+                   <LeftPanelUserAccepted/>
          <body>
 
       <div class="main_content">

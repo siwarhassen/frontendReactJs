@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import { renderToString } from 'react-dom/server';
 import jsPDF from "jspdf";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelCourse from "../LeftPanelCourse";
 export default function Jdf() {
   const element = document.getElementById("s");
   
@@ -30,7 +32,8 @@ export default function Jdf() {
 
   return (
     <div >
-     <Header />
+    <HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
       <div >
         <button onClick={printDocument}>Pdf</button>
       </div>

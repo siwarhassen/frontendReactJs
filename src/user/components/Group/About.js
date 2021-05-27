@@ -5,7 +5,8 @@ import { queryApi } from "../../../utils/queryApi";
 import { useApi } from "../../../hooks/useApi";
 import { useDispatch ,useSelector , useEffect} from 'react-redux';
 import Select from 'react-select'
-import Header from '../../../user/components/Header';
+import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
+import LeftPanelGroup from '../../../user/components/LeftPanelGroup';
 import Board from 'react-trello'
 import {Dialog,Button,DialogActions,DialogContent,DialogContentText,DialogTitle } from '@material-ui/core';
 import Moment from "react-moment";
@@ -235,7 +236,8 @@ export default function About({match}) {
           
 			
 <body>
-<Header></Header>
+<HeaderWithoutLeftPanel/>
+<LeftPanelGroup/>
 	<div>
 		<div class="main_content">
 			<div class="mcontainer">

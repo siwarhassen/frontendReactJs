@@ -1,7 +1,8 @@
 import React ,{useState , useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import Header from '../../Header';
+import HeaderWithoutLeftPanel from '../../HeaderWithoutLeftPanel';
+import LeftPanelPage from '../../LeftPanelPage';
 import {useDispatch, useSelector} from "react-redux";
 import { selectPages,filter,fetchPages} from "../../../../redux/slices/pagesSlice";
 import ReactPaginate from 'react-paginate';
@@ -142,7 +143,8 @@ const AllPagesScreen = ({history}) =>{
     })
     return (
         <>
-        <Header/>
+        <HeaderWithoutLeftPanel/>
+        <LeftPanelPage/>
     <body>
     <div id="wrapper">
     <div class="main_content">

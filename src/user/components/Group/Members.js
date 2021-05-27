@@ -5,8 +5,9 @@ import { queryApi } from "../../../utils/queryApi";
 import { useApi } from "../../../hooks/useApi";
 import { useDispatch ,useSelector} from 'react-redux';
 import Select from 'react-select'
-import Header from '../../../user/components/Header';
+import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
 import {Dialog,Button,DialogActions,DialogContent,DialogContentText,DialogTitle } from '@material-ui/core';
+import LeftPanelGroup from '../LeftPanelGroup';
 
 export default function Members({match}) {
 	const id = match.params.id;
@@ -131,7 +132,8 @@ export default function Members({match}) {
           
 			
 <body>
-<Header /> 
+<HeaderWithoutLeftPanel /> 
+<LeftPanelGroup/>
 	<div>
 		<div class="main_content">
 			<div class="mcontainer">

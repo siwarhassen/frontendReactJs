@@ -9,6 +9,8 @@ import { NotificationContainer, NotificationManager } from "react-notifications"
 import "react-notifications/lib/notifications.css";
 import { useLocation } from "react-router";
 import Header from'../Header';
+import LeftPanelJob from "../LeftPanelJob";
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
 
 function EditJob({history}) {
   const location = useLocation((state) => state.job);
@@ -55,7 +57,8 @@ function EditJob({history}) {
           touched,
         }) => {
           return (
-            <> <Header/>
+            <> <HeaderWithoutLeftPanel />
+            <LeftPanelJob/>
             <div>
               <div id="wrapper" class="flex flex-col justify-between h-screen">
                 <div class="bg-white py-4 shadow dark:bg-gray-800">

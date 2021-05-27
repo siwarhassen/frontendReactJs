@@ -7,6 +7,8 @@ import Moment from "react-moment";
 import { useSelector } from "react-redux";
 import { selectCvs } from "../../../redux/slices/cvSlice";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelJob from "../LeftPanelJob";
 import {showSuccessmsg,showErrmsg} from '../utils/notification/Notification';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -54,7 +56,8 @@ export default function JobDetails(props) {
 
   return (
     <body>
-       <Header />
+       <HeaderWithoutLeftPanel />
+             <LeftPanelJob/>
       <div class="main_content">
         <div class="mcontainer">
           <div class="lg:flex  lg:space-x-12">

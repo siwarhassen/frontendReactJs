@@ -8,6 +8,8 @@ import io from "socket.io-client";
 import CommentItem from "./CommentItem";
 import Loading from "../Problem/loading.gif";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from "../HeaderWithoutLeftPanel";
+import LeftPanelProblem from "../LeftPanelProblem";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function ProblemDetail(props) {
   const id = props.match.params.id;
@@ -121,7 +123,8 @@ export default function ProblemDetail(props) {
 
   return (
     <body>
-      <Header />
+         <HeaderWithoutLeftPanel />
+    <LeftPanelProblem />
       <div id="wrapper">
         {/*<!-- Main Contents -->*/}
         <div class="main_content">

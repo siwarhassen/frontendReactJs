@@ -19,6 +19,8 @@ import {
   
   } from "react-share";
 import { FacebookIcon, TwitterIcon,LinkedinIcon } from "react-share";
+import LeftPanelCourse from '../LeftPanelCourse';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
 export default function Certification({match}) {
   const id = match.params.id;
   const certification=     useApi("certif/detailcertif/"+id,null,"GET",false)[0];
@@ -49,7 +51,8 @@ export default function Certification({match}) {
           
 
         <div>
-        <Header />
+        <HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
             <br/><br/><br/>
 <div class="page-content-inner">
 <div >

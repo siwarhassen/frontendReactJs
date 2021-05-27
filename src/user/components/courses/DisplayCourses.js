@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import { selectCourses,searchcourse,fetchCourses,searchcoursesbyName,filtercoursesbyLevel} from "../../../redux/slices/coursesSlice";
 import Header from'../Header';
+import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
+import LeftPanelCourse from '../LeftPanelCourse';
 export default function DisplayCourses() {
     const [courses] =useSelector(selectCourses);
     console.log(courses);
@@ -101,7 +103,8 @@ const paginatecourses=  courses?.slice(pageVisited,pageVisited+addedcoursesPerPa
           
 
 <div>
-     <Header />
+<HeaderWithoutLeftPanel />
+<LeftPanelCourse/>
 <div class="main_content">
             <div class="mcontainer">
 
