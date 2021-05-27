@@ -458,7 +458,7 @@ export default function PostItem({ post, key }) {
             </a>
              <FacebookShareButton
                 
-             
+              url={upload}
               quote={post.description} 
     >
       <FacebookIcon size={32} round />
