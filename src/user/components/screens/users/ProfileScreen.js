@@ -419,7 +419,7 @@ const id = match.params.id;
                               </li>
                               <li class="flex items-center space-x-2"> 
                                   <ion-icon name="logo-rss"  class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                  Flowwed By <strong> {numbersFby} Peaple </strong>
+                                  Followed By <strong> {numbersFby} Peaple </strong>
                               </li>                                
                           </ul>
                           
