@@ -731,7 +731,7 @@ const fileType=['application/pdf'];
                               </li>
                               <li class="flex items-center space-x-2"> 
                                   <ion-icon name="logo-rss"  class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                  Flowwed By <strong> {numbersFby} Peaple </strong>
+                                  Followed By <strong> {numbersFby} People </strong>
                               </li>                                
                           </ul>
                           <Button style={{color:'#1E90FF'}} onClick={handleClickOpen} class="bg-gray-100 py-2.5 text-center font-semibold w-full mt-4 block rounded">Edit</Button>
