@@ -314,7 +314,8 @@ const id = match.params.id;
          </div>
          <div class="card-body">
              <h5 class="card-title">{val?.name}</h5>
-             <p class="card-text"><strong>Url Project:</strong> {val?.urlProject}</p>
+               <p class="card-text"><strong>Url Project:</strong> <a target="_blank" class="card-text" rel="noopener noreferrer" href={val?.urlProject}>{val?.urlProject}</a> </p>
+          
              <p class="card-text"><strong>Description:</strong> {val?.description}</p>
          </div>
      </div> 
