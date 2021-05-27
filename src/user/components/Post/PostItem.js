@@ -452,16 +452,17 @@ export default function PostItem({ post, key }) {
             <a class="flex items-center space-x-2 flex-1 justify-end">
               <div class="p-2 rounded-full text-black lg:bg-gray-100">
                    
-              <FacebookShareButton
+             
+              </div>
+             
+            </a>
+             <FacebookShareButton
                 
              
               quote={post.description} 
     >
       <FacebookIcon size={32} round />
     </FacebookShareButton>
-              </div>
-             
-            </a>
           </div>
           <div class="flex items-center space-x-3 pt-2">
             <div class="flex items-center">
