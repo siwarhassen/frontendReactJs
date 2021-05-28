@@ -7,7 +7,7 @@ import { useDispatch ,useSelector } from 'react-redux';
 import { useState} from 'react';
 import HeaderWithoutLeftPanel from '../../../user/components/HeaderWithoutLeftPanel';
 import { getPosts } from "../../../redux/actions/postAction";
-import AddPost from "../Post/AddPost";
+import AddPost from "./AddPost";
 import PostItem from "../Post/PostItem";
 import LeftPanelGroup from '../LeftPanelGroup';
 
@@ -247,7 +247,7 @@ async function applyupdate() {
 		
 				<div class="lg:flex lg:mt-8 mt-4 lg:space-x-8">
 				<div class="space-y-5 flex-shrink-0 lg:w-7/12">
-                  <AddPost groupid={group?._id}></AddPost>
+                  <AddPost groupid={id}></AddPost>
                   {posts.map((post) => {
                     return <PostItem post={post} key={post._id}></PostItem>;
                   })}
