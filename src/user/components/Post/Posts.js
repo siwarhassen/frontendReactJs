@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
+import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, getPosts } from "../../../redux/actions/postAction";
 import AddPost from "./AddPost";
 import PostItem from "./PostItem";
 import Header from'../Header';
+import {Link} from 'react-router-dom';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Posts() {
   /* const [posts, setposts] = useState([]);
