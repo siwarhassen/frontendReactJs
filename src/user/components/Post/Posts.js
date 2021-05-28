@@ -8,13 +8,32 @@ import Header from'../Header';
 import {Link} from 'react-router-dom';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Posts() {
+    const [allfollowers,setAllFollowers] = useState([]);
   /* const [posts, setposts] = useState([]);
 
   useEffect(() => {
     axios.get("https://aaweni.herokuapp.com/pi/postRoute/post").then((res) => setposts(res.data.posts));
   }, []);
   console.log(posts);*/
+ /**get all followers */
 
+    axios.get(`https://aaweni.herokuapp.com/followuser/getFollowers1`, config)
+    .then((response) => {
+        setAllFollowers(response.data);
+    console.log(response.data)
+    })
+    .catch((error) => {
+    console.log(error)
+    })
+
+    axios.get(`https://aaweni.herokuapp.com/sessions/`, config)
+    .then((response) => {
+      setSessions(response.data);
+    console.log(response.data)
+    })
+    .catch((error) => {
+    console.log(error)
+    })
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPosts());
