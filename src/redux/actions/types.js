@@ -20,3 +20,4 @@ export const SEARCH_JOBS = "SEARCH_JOBS";
 export const CATP_UPDATED = "SEARCH_JOBS";
 export const GET_JOBSTAT = "GET_JOBSTAT";
 export const GET_PROBLEMSTAT = "GET_PROBLEMSTAT";
+export const POSTGROUP_SAVED = "POSTGROUP_SAVED";
