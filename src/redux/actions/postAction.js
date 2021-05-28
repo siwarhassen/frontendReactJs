@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_POSTS, DELETE_POST, POST_SAVED, RESET_SAVED, POST_UPDATED } from "./types";
+import { GET_POSTS, DELETE_POST, POST_SAVED, RESET_SAVED, POST_UPDATED,POSTGROUP_SAVED } from "./types";
 const config = {
   headers: {
       "Content-Type":"appliation/json",
@@ -17,7 +17,17 @@ export const getPosts = () => {
   };
 };
 
-
+export const createPostGroup = (post) => {
+  return async (dispatch) => {
+    try {
+      return await axios
+        .post("https://aaweni.herokuapp.com/pi/postRoute/postgroup", post)
+        .then((res) => dispatch({ type: POSTGROUP_SAVED, payload: res.data }));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
 export const deletePost = (postId) => {
   return async (dispatch) => {
     try {
