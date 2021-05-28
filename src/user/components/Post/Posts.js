@@ -53,7 +53,9 @@ export default function Posts() {
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
-  const posts = useSelector((state) => state.postReducer.posts);
+   const posts = useSelector((state) =>
+    state.postReducer.posts.filter((post) => post.Group === null)
+  );
 
   return (
     <body>
