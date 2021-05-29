@@ -102,13 +102,13 @@ export default function Posts() {
               { allfollowers?.map((val,key) => {
   return(
                 <div >
-                     <div>
+                     <Link >
                       <div class="contact-avatar">
                           <img src={val.profilePicture} alt=""/>
                           <span class="user_status status_online"></span>
                       </div>
                       <div class="contact-username"  onClick={() => {setStatechatbox(val._id) ; setUsername(val.username);}} > {val.username} </div>
-                 </div>
+                  </Link>
                   <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
                       <div class="contact-list-box">
                           <div class="contact-avatar">
