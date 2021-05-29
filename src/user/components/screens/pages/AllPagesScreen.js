@@ -115,7 +115,7 @@ const AllPagesScreen = ({history}) =>{
             </a>
             <div class="flex-1 lg:pt-0 pt-4"> 
                  
-            <Link to={`/pagedetails/${val._id}`} class="text-xl font-semibold line-clamp-2"> {val.name} </Link> 
+            <Link to={`/pagedetailsposts/${val._id}`} class="text-xl font-semibold line-clamp-2"> {val.name} </Link> 
                 <p class="line-clamp-2 pt-1">  </p>
                 
               {/**  <div class="flex space-x-2 items-center text-sm">
