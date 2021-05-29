@@ -32,6 +32,9 @@ import ProfileScreen from './user/components/screens/users/ProfileScreen';
 import ProfileEScreen from './user/components/screens/users/ProfileEScreen';
 import ProfilePScreen from './user/components/screens/users/ProfilePScreen';
 import ProfileSScreen from './user/components/screens/users/ProfileSScreen';
+import PageDetailPostScreen from './user/components/screens/pages/PageDetailPostScreen';
+
+
 
 import PostScreen from './user/components/screens/users/ProfilePostScreen';
  
@@ -136,7 +139,9 @@ function App() {
            <Route exact path="/api/auth/resetpassword/:token" component={ResetPasswordScreen}/>
           <PrivateRoute exact path="/" component={PrivateScreen}/>
           <PrivateRoute exact path="/edit_info_user" component={EditProfileScreen}/> 
-		  
+		    <PrivateRoute exact path="/pagedetailsposts/:id" component={PageDetailPostScreen}/>
+
+
  
           <PrivateRoute exact path="/profile_education" component={EducationScreen}/>
           <PrivateRoute exact path="/profile_projet" component={ProjetScreen}/>
