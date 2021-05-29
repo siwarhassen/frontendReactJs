@@ -137,7 +137,7 @@ const PagesScreen = ({history}) =>{
                                         <img src={`assets/uploads/${val.profilePicture}`} class="absolute w-full h-full inset-0 rounded-md object-cover shadow-sm" alt=""/>
                                     </div> 
                                     <div class="flex-1 border-b pb-3">
-                                    <Link to={`/pagedetails/${val._id}`}  class="text-lg font-semibold capitalize">{val.name}</Link>
+                                    <Link to={`/pagedetailsposts/${val._id}`}  class="text-lg font-semibold capitalize">{val.name}</Link>
                                     {/**     <div class="flex space-x-2 items-center text-sm">
                                         
                                             <div> 16k Members</div>
