@@ -7,10 +7,12 @@ import AddPost from '../Post/AddPost';
 import PostItem from '../Post/PostItem';
 import { deletePost, getPosts } from "../../../redux/actions/postAction";
 import {Link} from 'react-router-dom';
+import Chatbox from "../Chat/Chatbox";
 const PrivateScreen = ({history}) => {
     const [error, setError]= useState("");
     const [privateData, setPrivateData]= useState("");
-
+const [statechatbox, setStatechatbox] = useState("0");
+  const [username, setUsername] = useState("");
     const [allfollowers,setAllFollowers] = useState([]);
     const [sessions,setSessions] = useState([]);
  /**get all followers */
@@ -126,12 +128,12 @@ const dispatch = useDispatch();
               { allfollowers?.map((val,key) => {
   return(
                 <div >
-                  <Link to={`/userdetails/${val._id}`}>
+                   <Link >
                       <div class="contact-avatar">
                           <img src={val.profilePicture} alt=""/>
                           <span class="user_status status_online"></span>
                       </div>
-                      <div class="contact-username"> {val.username} </div>
+                      <div class="contact-username"  onClick={() => {setStatechatbox(val._id) ; setUsername(val.username);}} > {val.username} </div>
                   </Link>
                   <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
                       <div class="contact-list-box">
@@ -165,7 +167,9 @@ const dispatch = useDispatch();
 
                  })}
                
-  
+    {(statechatbox=="0"?( 
+         <div></div>
+                                ):(       <Chatbox  setStatechatbox={setStatechatbox} statechatbox={statechatbox} username={username} />))}
               </div>
   
   
