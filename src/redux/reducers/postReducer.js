@@ -1,4 +1,4 @@
-import { GET_POSTS, DELETE_POST, POST_SAVED, RESET_SAVED, POST_UPDATED,POSTGROUP_SAVED } from "../actions/types";
+import { GET_POSTS, DELETE_POST, POST_SAVED, RESET_SAVED, POST_UPDATED,POSTGROUP_SAVED,POSTPAGE_SAVED } from "../actions/types";
 
 const initialState = { posts: [], saved: false, updated: false };
 
@@ -17,6 +17,8 @@ export default function postReducer(state = initialState, action) {
     case RESET_SAVED:
       return { ...state, saved: false, updated: false };
     case POSTGROUP_SAVED:
+      return { ...state, saved: true };
+    case POSTPAGE_SAVED:
       return { ...state, saved: true };
     default:
       return state;
