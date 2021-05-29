@@ -202,8 +202,8 @@ const PageDetailsScreen = ({history,match}) =>{
                     </div>
 
                     <nav class="cd-secondary-nav border-t -mb-0.5 lg:pl-2">
-                        <ul>
-                            <li><a href="#0"> Home</a></li>
+                       <ul>
+                        <li ><Link to={`/pagedetailsposts/${page._id}`} >Home</Link></li>
                             <li ><Link to={`/pagedetails/${page._id}`} >About</Link></li>
                             <li class="active"><Link to={`/pagefollowersdetails/${page._id}`}>Followers</Link></li>
                             
