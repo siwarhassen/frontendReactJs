@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_POSTS, DELETE_POST, POST_SAVED, RESET_SAVED, POST_UPDATED,POSTGROUP_SAVED } from "./types";
+import { GET_POSTS, DELETE_POST, POST_SAVED, RESET_SAVED, POST_UPDATED,POSTGROUP_SAVED,POSTPAGE_SAVED  } from "./types";
 const config = {
   headers: {
       "Content-Type":"appliation/json",
@@ -60,6 +60,18 @@ export const updatePost = (postId, post) => {
       dispatch({ type: POST_UPDATED, payload: res.data });
     } catch (error) {
       console.log(error);
+    }
+  };
+};
+
+export const createPostPage = (post) => {
+  return async (dispatch) => {
+    try {
+      return await axios
+        .post("https://aaweni.herokuapp.com/pi/postRoute/postpage", post)
+        .then((res) => dispatch({ type: POSTPAGE_SAVED, payload: res.data }));
+    } catch (e) {
+      console.log(e);
     }
   };
 };
