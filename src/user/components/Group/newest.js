@@ -157,9 +157,6 @@ export default function Newest() {
     <ul>
         <li > <Link to={`/groups`}  ><a  href="javascript:void(0);" class="lg:px-2"> All <span> {groups?.length} </span> </a>  </Link></li>
         <li class="active" ><Link to={`/newest`}  ><a  href="javascript:void(0);" class="lg:px-2">   Recently added  </a></Link></li>
-        <li><a href="#" class="lg:px-2"> Family </a></li>
-        <li><a href="#" class="lg:px-2"> University </a></li>
-        <li><a href="#" class="lg:px-2"> more </a></li>
     </ul>
 </nav>
 
