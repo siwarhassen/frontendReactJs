@@ -6,12 +6,15 @@ import AddPost from "./AddPost";
 import PostItem from "./PostItem";
 import Header from'../Header';
 import {Link} from 'react-router-dom';
+import Chatbox from "../Chat/Chatbox";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Posts() {
 
 
   const [allfollowers,setAllFollowers] = useState([]);
   const [sessions,setSessions] = useState([]);
+   const [statechatbox, setStatechatbox] = useState("0");
+  const [username, setUsername] = useState("");
   const config = {
     headers: {
         "Content-Type":"appliation/json",
@@ -104,7 +107,7 @@ export default function Posts() {
                           <img src={val.profilePicture} alt=""/>
                           <span class="user_status status_online"></span>
                       </div>
-                      <div class="contact-username"> {val.username} </div>
+                      <div class="contact-username",  onClick={() => {setStatechatbox({val._id}) ; setUsername({val.username});}} > {val.username} </div>
                   </Link>
                   <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
                       <div class="contact-list-box">
@@ -137,7 +140,10 @@ export default function Posts() {
   </a>
 
                  })}
-               
+                 {(statechatbox=="0"?( 
+         <div></div>
+                                ):(       <Chatbox  setStatechatbox={setStatechatbox} statechatbox={statechatbox} username={username} />))}
+ 
   
               </div>
   
