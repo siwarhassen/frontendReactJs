@@ -107,7 +107,7 @@ export default function Posts() {
                           <img src={val.profilePicture} alt=""/>
                           <span class="user_status status_online"></span>
                       </div>
-                      <div class="contact-username"  onClick={() => {setStatechatbox({val._id}) ; setUsername({val.username});}} > {val.username} </div>
+                      <div class="contact-username"  onClick={() => {setStatechatbox(val._id) ; setUsername(val.username);}} > {val.username} </div>
                   </Link>
                   <div uk-drop="pos: left-center ;animation: uk-animation-slide-left-small">
                       <div class="contact-list-box">
