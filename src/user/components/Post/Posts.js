@@ -7,10 +7,11 @@ import PostItem from "./PostItem";
 import Header from'../Header';
 import {Link} from 'react-router-dom';
 import Chatbox from "../Chat/Chatbox";
+import { useApi } from "../../../hooks/useApi";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Posts() {
-
-
+  const userconnected = localStorage.getItem("connecteduser");
+ const [groups, erre, reloads] = useApi("groupmember/groupsjoined/"+userconnected);
   const [allfollowers,setAllFollowers] = useState([]);
   const [sessions,setSessions] = useState([]);
    const [statechatbox, setStatechatbox] = useState("0");
@@ -99,6 +100,8 @@ export default function Posts() {
               </nav>
   
               <div class="contact-list" style={{overflow: "hidden"}}>
+                <ul id="group-details" class="uk-switcher">
+                  <li>
               { allfollowers?.map((val,key) => {
   return(
                 <div >
@@ -131,6 +134,28 @@ export default function Posts() {
   </div>
   )
               })}
+</li>
+
+<li>
+{ groups?.map((val,key) => {
+  return(
+                <div >
+                  <Link  to={`/group/${val.Group?._id}`}>
+                      <div class="contact-avatar" >
+                          <img  alt="" src={val.Group?.photo}/>
+                         
+                      </div>
+                      <div class="contact-username"> {val.Group?.Name} </div>
+                  </Link>
+             
+  </div>
+  )
+              })}
+        </li>
+</ul>
+
+
+
                   { allfollowers?.map((val,key) => {
       <a href="timeline.html" key={key}>
       <div class="contact-avatar">
