@@ -8,8 +8,11 @@ import PostItem from '../Post/PostItem';
 import { deletePost, getPosts } from "../../../redux/actions/postAction";
 import {Link} from 'react-router-dom';
 import Chatbox from "../Chat/Chatbox";
+import { useApi } from "../../../hooks/useApi";
 const PrivateScreen = ({history}) => {
     const [error, setError]= useState("");
+    const userconnected = localStorage.getItem("connecteduser");
+    const [groups, erre, reloads] = useApi("groupmember/groupsjoined/"+userconnected);
     const [privateData, setPrivateData]= useState("");
 const [statechatbox, setStatechatbox] = useState("0");
   const [username, setUsername] = useState("");
@@ -125,6 +128,10 @@ const dispatch = useDispatch();
               </nav>
   
               <div class="contact-list" style={{overflow: "hidden"}}>
+
+
+                <ul id="group-details" class="uk-switcher">
+                <li> 
               { allfollowers?.map((val,key) => {
   return(
                 <div >
@@ -157,6 +164,28 @@ const dispatch = useDispatch();
   </div>
   )
               })}
+             </li> 
+             <li>
+             { groups?.map((val,key) => {
+  return(
+                <div >
+                  <Link  to={`/group/${val.Group?._id}`}>
+                      <div class="contact-avatar" >
+                          <img  alt="" src={val.Group?.photo}/>
+                         
+                      </div>
+                      <div class="contact-username"> {val.Group?.Name} </div>
+                  </Link>
+             
+  </div>
+  )
+              })}
+             </li>
+</ul>
+
+
+
+
                   { allfollowers?.map((val,key) => {
       <a href="timeline.html" key={key}>
       <div class="contact-avatar">
