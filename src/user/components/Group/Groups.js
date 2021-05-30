@@ -188,9 +188,7 @@ export default function Groupes() {
                         <nav class="cd-secondary-nav border-b">
                             <ul>
                                 <li class="active"><a href="#" class="lg:px-2"> All Groups <span> {groups.length} </span> </a></li>
-                                <li  ><a  href="javascript:void(0);" class="lg:px-2">  <Link to={`/newest`}  > Recently added </Link> </a></li><li><a href="#" class="lg:px-2"> Family </a></li>
-                                <li><a href="#" class="lg:px-2"> University </a></li>
-                                <li><a href="#" class="lg:px-2"> more </a></li>
+                                <li  ><a  href="javascript:void(0);" class="lg:px-2">  <Link to={`/newest`}  > Recently added </Link> </a></li>
                             </ul>
                         </nav>
 
