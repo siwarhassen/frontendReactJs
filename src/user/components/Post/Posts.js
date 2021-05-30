@@ -58,7 +58,7 @@ export default function Posts() {
     dispatch(getPosts());
   }, [dispatch]);
    const posts = useSelector((state) =>
-    state.postReducer.posts.filter((post) => post.Group === null)
+    state.postReducer.posts.filter((post) => post.Group === null &&  post.page === null)
   );
 
   return (
