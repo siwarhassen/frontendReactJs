@@ -201,7 +201,7 @@ function App() {
           <Route path="/editjob" exact render={(props) => <EditJob {...props} />}></Route>
           <Route path="/editproblem" exact render={(props) => <EditProblem {...props} />}></Route>
           <Route path="/postsprofile" exact render={(props) => <PostsProfileScreen {...props} />}></Route>
-     
+       <Route path="/search/:input" exact render={(props) => <Search {...props} />}></Route>
          
   
 		
