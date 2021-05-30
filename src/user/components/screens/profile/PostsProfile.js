@@ -68,7 +68,8 @@ const userconnected = localStorage.getItem("connecteduser");
     dispatch(getPosts());
   }, [dispatch]);
   const posts = useSelector((state) =>
-    state.postReducer.posts.filter((post) => post.username._id === userconnected)
+    state.postReducer.posts.filter((post) => post.username._id === userconnected  && post.Group === null &&  post.page === null)
+                           
   );
 /**end posts */
     // Create new plugin instance
