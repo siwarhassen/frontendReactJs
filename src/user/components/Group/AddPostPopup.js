@@ -3,7 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Dialog } from "@material-ui/core";
 import { queryApi } from "../../../utils/queryApi";
-
+import { useDispatch ,useSelector} from 'react-redux';
+import {fetchconnectuser,selectoneuser,selectSessionUser} from "../../../redux/slices/userSlice";
 import {
   createPost,
   createPostGroup,
@@ -90,7 +91,7 @@ function AddPostPopup(props) {
                 </div>
                 <div class="flex flex-1 items-start space-x-4 p-5">
                   <img
-                    src="assets/user/images/logoo.png"
+                    src={connecteduser.profilePicture}
                     class="bg-gray-200 border border-white rounded-full w-11 h-11"
                   />
                   <div class="flex-1 pt-2">
