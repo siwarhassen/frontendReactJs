@@ -7,6 +7,7 @@ import { useDispatch ,useSelector} from 'react-redux';
 import {fetchconnectuser,selectoneuser,selectSessionUser} from "../../../redux/slices/userSlice";
 export default function AddPost({groupid}) {
   console.log(groupid);
+    const dispatch = useDispatch();
   const [openPopup, setopenPopup] = useState(false);
     useEffect(() => {
       dispatch(fetchconnectuser());
