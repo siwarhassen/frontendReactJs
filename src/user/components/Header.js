@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import createHistory from 'history/createBrowserHistory'
 import CreateRoom from "./videoChat/components/modal/CreateModal";
-
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 import JoinRoom from './videoChat/components/modal/Join';
 
@@ -11,11 +11,12 @@ const Header = ({history}) =>{
     const hi = createHistory()
   
   const [show, setShow] = useState(false);
-  const [search, setSearch] = useState("");
+  const { transcript, resetTranscript } = useSpeechRecognition()
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [search, setSearch] = useState("");
     const [showCreateRoom, setShowCreateRoom] = useState(false);
-
+  
     const showCreateRoomFunc = () => {
       setShowCreateRoom(!showCreateRoom);
     };
@@ -27,17 +28,17 @@ const [userId, setUserId] = useState("");
     const [user, setUser]= useState(Object);
     const [notif, setNotif]= useState([]);
 
-
+  
     const searchthroughenter =(event) => {
    
       setSearch(event.target.value);
-      if (event.keyCode === 13 ) {
+      if (event.key  === 'Enter' ) {
        
 
-         
-
-          document.getElementById("searchenter").click();
+         //alert(event.target.value)
        
+        document.getElementById("searchenter").click();
+        setSearch("");
     }
     
       
@@ -112,7 +113,10 @@ const [userId, setUserId] = useState("");
                        <button id="searchenter" type="hidden"></button>
                        </Link> 
                     </div>
-                    <button hidden></button>
+                    <button primary large>
+                    <ion-icon name="mic-outline" onMouseDown={SpeechRecognition.startListening}    style={{height:"400px",width:"30px",marginTop:"-10px"}}></ion-icon>
+</button>
+<p>{transcript}</p>
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
                         <div class="-mt-2 p-3">
                             <h4 class="font-semibold mb-1 mt-2 px-2.5 text-lg"> Recently  </h4>
