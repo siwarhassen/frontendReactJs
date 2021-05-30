@@ -9,8 +9,8 @@ import JoinRoom from './videoChat/components/modal/Join';
 
 const Header = ({history}) =>{
  
-    const [show, setShow] = useState(false);
-
+  
+  const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [showCreateRoom, setShowCreateRoom] = useState(false);
