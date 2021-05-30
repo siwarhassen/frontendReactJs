@@ -14,6 +14,22 @@ const HeaderWithoutLeftPanel = ({history}) =>{
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [showCreateRoom, setShowCreateRoom] = useState(false);
+   const [search, setSearch] = useState("");
+    const searchthroughenter =(event) => {
+   
+      setSearch(event.target.value);
+      if (event.keyCode === 13 ) {
+       
+
+         
+
+          document.getElementById("searchenter").click();
+       
+    }
+    
+      
+      
+        }
 
     const showCreateRoomFunc = () => {
       setShowCreateRoom(!showCreateRoom);
@@ -87,8 +103,11 @@ const [userId, setUserId] = useState("");
                    
                     <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
                     <div class="header_search">
-                        <input value="" type="text" class="form-control" placeholder="Search for Friends , Videos and more.." autocomplete="off"/>
-                        <i class="uil-search-alt"></i>
+                          <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  onKeyDown={searchthroughenter}/>
+                       <i class="uil-search-alt"></i>
+                       <Link to={`/search/${search}`}>
+                       <button id="searchenter" type="hidden"></button>
+                       </Link> 
                     </div>
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
                         <div class="-mt-2 p-3">
