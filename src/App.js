@@ -34,7 +34,7 @@ import ProfilePScreen from './user/components/screens/users/ProfilePScreen';
 import ProfileSScreen from './user/components/screens/users/ProfileSScreen';
 import PageDetailPostScreen from './user/components/screens/pages/PageDetailPostScreen';
 
-
+import Search from './user/components/Search';
 
 import PostScreen from './user/components/screens/users/ProfilePostScreen';
  
