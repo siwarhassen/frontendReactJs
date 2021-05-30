@@ -14,7 +14,7 @@ import {
 
 import Picker from "emoji-picker-react";
 import axios from "axios";
-import { fetchconnectuser, selectSessionUser } from "../../../redux/slices/userSlice";
+
 import { Formik } from "formik";
 
 function AddPostPopup(props) {
