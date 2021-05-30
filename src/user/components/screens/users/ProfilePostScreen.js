@@ -43,7 +43,7 @@ const id = match.params.id;
     dispatch(getPosts());
   }, [dispatch]);
   const posts = useSelector((state) =>
-    state.postReducer.posts.filter((post) => post.username._id === id)
+       state.postReducer.posts.filter((post) => post.username._id === id  && post.Group === null &&  post.page === null)
   );
 /**end posts */
     useEffect(() => {
