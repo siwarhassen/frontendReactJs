@@ -100,7 +100,7 @@ const [userId, setUserId] = useState("");
                   
                     <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
                     <div class="header_search">
-                    <input type="text" name="name" placeholder="Search for Friends , Videos and more.." id="searchinput"  onKeyUp={searchthroughenter}/>
+                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  onKeyUp={searchthroughenter}/>
                        <i class="uil-search-alt"></i>
                     </div>
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
