@@ -25,6 +25,20 @@ const [userId, setUserId] = useState("");
     };
     const [user, setUser]= useState(Object);
     const [notif, setNotif]= useState([]);
+
+
+    const searchthroughenter =(event) => {
+   
+        if (event.keyCode === 13 ) {
+         
+            window.location.href = "https://3aweni.netlify.app/search/"+document.getElementById("searchinput").value;
+         
+      }
+      
+      
+        }
+
+
     useEffect(() => {
         if(!localStorage.getItem("authToken")){
             history.push("/login")
@@ -83,12 +97,11 @@ const [userId, setUserId] = useState("");
                             </Link>
                         </div>
                     </div>
-                     {/*  <!-- search icon for mobile -->*/}
-                   
+                  
                     <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
                     <div class="header_search">
-                        <input value="" type="text" class="form-control" placeholder="Search for Friends , Videos and more.." autocomplete="off"/>
-                        <i class="uil-search-alt"></i>
+                    <input type="text" name="name" placeholder="Search for Friends , Videos and more.." id="searchinput"  onKeyUp={searchthroughenter}/>
+                       <i class="uil-search-alt"></i>
                     </div>
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
                         <div class="-mt-2 p-3">
