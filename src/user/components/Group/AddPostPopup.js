@@ -11,7 +11,7 @@ import {
   getPosts,
   resetSaved,
 } from "../../../redux/actions/postAction";
-import { useDispatch, useSelector } from "react-redux";
+
 import Picker from "emoji-picker-react";
 import axios from "axios";
 import { fetchconnectuser, selectSessionUser } from "../../../redux/slices/userSlice";
