@@ -2,28 +2,43 @@ import React,{useState , useEffect} from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
 import { useDispatch ,useSelector} from 'react-redux';
-import {fetchconnectuser,selectoneuser,selectSessionUser} from "../../redux/slices/userSlice";
+import {fetchconnectuser,selectoneuser,selectSessionUser,selectUsers} from "../../redux/slices/userSlice";
 import Moment from "react-moment";
 
 import PostItem from '../components/Post/PostItem';
 import { deletePost, getPosts } from "../../redux/actions/postAction";
 import { searchcoursesbyName, selectCourses } from '../../redux/slices/coursesSlice';
+import {  selectPages } from '../../redux/slices/pagesSlice';
 import { useApi } from '../../hooks/useApi';
 import { queryApi } from '../../utils/queryApi';
 import JobItem from './Job/JobItem';
 
 import LinesEllipsis from 'react-lines-ellipsis';
 import { Link } from 'react-router-dom';
+import { selectGroups } from '../../redux/slices/groupsSlice';
+import { getJobs } from '../../redux/actions/jobAction';
 const Search = ( props) => {
     const [error, setError]= useState("");
     const input = props.match.params.input;
     const [privateData, setPrivateData]= useState("");
-    const [courses,setCourses] =useState([]);
-    const [groups,setGroups] =useState([]);
-    const [pages,setPages] =useState([]);
-    const [jobs,setJobs] =useState([]);
-    const [problems,setProblems] =useState([]);
-    const [users,setUsers] =useState([]);
+    const [courses] =useSelector(selectCourses);
+    useEffect(() => {
+        dispatch(getJobs());
+      }, [dispatch]);
+      const jobs = useSelector((state) => state.jobReducer.jobs);
+
+    const [groups] =useSelector(selectGroups); 
+    const [pages,setPages] =useSelector(selectPages);
+   
+    const [problems,setproblems] =useState([]);
+    useEffect(() => {
+        axios
+          .get("https://aaweni.herokuapp.com/pi/postRoute/problem")
+          .then((res) => setproblems(res.data.problems));
+      }, []);
+    const [users] =useSelector(selectUsers);
+
+    
     const [posts,setPosts] =useState([]);
 
     const config = {
@@ -32,98 +47,23 @@ const Search = ( props) => {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
     }
-        /**get courses */
-    
-        axios.get(`https://aaweni.herokuapp.com/course/searchnamelike/`+input, config)
-        .then((response) => {
-            setCourses(response.data);
-        
-        })
-        .catch((error) => {
-        console.log(error)
-        })
-
-        /**end course */
-
-/**get users */
-    
-axios.get(`https://aaweni.herokuapp.com/api/auth/searchbyusername/`+input, config)
-.then((response) => {
-    setUsers(response.data.result);
-  
-console.log(users)
-})
-.catch((error) => {
-console.log(error)
-})
 
 /**end users */
 
    /**get groups */
     
-   axios.get(`https://aaweni.herokuapp.com/groups/search/`+input, config)
-   .then((response) => {
-       setGroups(response.data);
-   
-   })
-   .catch((error) => {
-   console.log(error)
-   })
+ 
 
    /**end groups */
 
 
   /**get pages */
-    
-  axios.get(`https://aaweni.herokuapp.com/page/searchbyname/`+input, config)
-  .then((response) => {
-      setPages(response.data);
-  
-  })
-  .catch((error) => {
-  console.log(error)
-  })
-
-  /**end pages */
-/**get posts */
-    
-axios.get(`https://aaweni.herokuapp.com/pi/postRoute/searchpostytitle/`+input, config)
-.then((response) => {
-    setUsers(response.data.result);
- 
-
-})
-.catch((error) => {
-console.log(error)
-})
-
-/**end posts */
-
-  /**get jobs */
-    
-  axios.get(`https://aaweni.herokuapp.com/pi/postRoute/searchjobytitle/`+input, config)
-  .then((response) => {
-      setJobs(response.data.result);
-  
-  })
-  .catch((error) => {
-  console.log(error)
-  })
-
-  /**end jobs */
 
 
 
-  /**get problems */
-    
-  axios.get(`https://aaweni.herokuapp.com/pi/postRoute/searchproblembytitle/`+input, config)
-  .then((response) => {
-      setProblems(response.data.result);
 
-  })
-  .catch((error) => {
-  console.log(error)
-  })
+
+
 
   /**end jobs */
 
@@ -179,7 +119,13 @@ console.log(error)
                             {/**users */}
                             <li>
                             <div >
-                            {users?.map((user,key)=>{
+                            {users?.filter((val)=>{
+                            if(input == ""){
+                                return val
+                            }else if (val.username.toLowerCase().includes(input.toLowerCase())){
+                                return val
+                            }
+                        }).map((user,key)=>{
                        
                             return(
                     <div class="lg:flex lg:space-x-6 py-5" key={key}>
@@ -206,7 +152,13 @@ console.log(error)
                             </li>
                           {/**pages */}
                           <li>
-                          {pages?.map((page, i) => {
+                          {pages?.filter((val)=>{
+                            if(input == ""){
+                                return val
+                            }else if (val.name.toLowerCase().includes(input.toLowerCase())){
+                                return val
+                            }
+                        }).map((page, i) => {
                                   return(
                               <div class="lg:flex lg:space-x-6 py-6"  key={i}>
                                 
@@ -237,7 +189,13 @@ console.log(error)
 
                              {/**groups */}
                           <li>
-                          {groups?.map((group, i) => {
+                          { groups?.filter((val)=>{
+                            if(input == ""){
+                                return val
+                            }else if (val.Name.toLowerCase().includes(input.toLowerCase())){
+                                return val
+                            }
+                        }).map((group, i) => {
                                   return(
                               <div class="lg:flex lg:space-x-6 py-6"  key={i}>
                                 <Link  to={`/group/${group._id}`}>
@@ -263,7 +221,13 @@ console.log(error)
                               {/**end groups */}
                        {/**course */}
                               <li>
-                              {courses?.map((cour, i) => {
+                              { courses?.filter((val)=>{
+                            if(input == ""){
+                                return val
+                            }else if (val.Name.toLowerCase().includes(input.toLowerCase())){
+                                return val
+                            }
+                        }).map((cour, i) => {
                                   return(
                               <div class="lg:flex lg:space-x-6 py-6"  key={i}>
                                   
@@ -292,14 +256,26 @@ console.log(error)
                           
 
                           <li>
-                          {jobs?.map((job, index) => {
+                          { jobs?.filter((val)=>{
+                            if(input == ""){
+                                return val
+                            }else if (val.title.toLowerCase().includes(input.toLowerCase())){
+                                return val
+                            }
+                        }).map((job, index) => {
                     return (<JobItem job={job} key={job._id}/>);
                   })}
                           </li>
 
 
                           <li>
-                          {problems?.map((problem, index) => {
+                          {problems?.filter((val)=>{
+                            if(input == ""){
+                                return val
+                            }else if (val.title.toLowerCase().includes(input.toLowerCase())){
+                                return val
+                            }
+                        }).map((problem, index) => {
                     return (
 
                      
