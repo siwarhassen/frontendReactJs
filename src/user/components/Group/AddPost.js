@@ -1,17 +1,22 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddPostPopup from "./AddPostPopup";
-
+import { useDispatch ,useSelector} from 'react-redux';
+import {fetchconnectuser,selectoneuser,selectSessionUser} from "../../../redux/slices/userSlice";
 export default function AddPost({groupid}) {
   console.log(groupid);
   const [openPopup, setopenPopup] = useState(false);
+    useEffect(() => {
+      dispatch(fetchconnectuser());
+        }, [dispatch]);
+      const connecteduser=useSelector(selectSessionUser)[0];
   return (
     <>
       <div class="bg-white shadow border border-gray-100 rounded-lg dark:bg-gray-900 lg:mx-0 p-4">
         <div class="flex space-x-3">
-          <img src="assets/user/images/avatars/avatar-2.jpg" class="w-10 h-10 rounded-full" />
+          <img src={connecteduser.profilePicture} class="w-10 h-10 rounded-full" />
           <input
             onClick={() => setopenPopup(true)}
             placeholder="What's Your Mind ?"
