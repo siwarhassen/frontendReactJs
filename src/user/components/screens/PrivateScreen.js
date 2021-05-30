@@ -83,7 +83,8 @@ const dispatch = useDispatch();
     useEffect(() => {
       dispatch(getPosts());
     }, [dispatch]);
-    const posts = useSelector((state) => state.postReducer.posts);
+    
+    const posts = useSelector((state) => state.postReducer.posts.filter((post) => post.Group === null &&  post.page === null));
     return error ? (
         <span>{error}</span>
     ) : (
