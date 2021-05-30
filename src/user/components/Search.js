@@ -50,7 +50,7 @@ const Search = ( props) => {
 axios.get(`https://aaweni.herokuapp.com/api/auth/searchbyusername/`+input, config)
 .then((response) => {
     setUsers(response.data.result);
-    console.log(response.data.result)
+  
 console.log(users)
 })
 .catch((error) => {
@@ -90,8 +90,8 @@ console.log(error)
 axios.get(`https://aaweni.herokuapp.com/pi/postRoute/searchpostytitle/`+input, config)
 .then((response) => {
     setUsers(response.data.result);
-    console.log(response.data.result)
-console.log(users)
+ 
+
 })
 .catch((error) => {
 console.log(error)
@@ -119,7 +119,7 @@ console.log(error)
   axios.get(`https://aaweni.herokuapp.com/pi/postRoute/searchproblembytitle/`+input, config)
   .then((response) => {
       setProblems(response.data.result);
-  console.log(response)
+
   })
   .catch((error) => {
   console.log(error)
