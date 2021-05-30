@@ -303,64 +303,7 @@ async function applyupdate() {
 								</div>
 							</div>
 						</div>
-						<div class="widget border-t pt-4">
-							<div class="flex items-center justify-between mb-2">
-								<div>
-									<h4 class="text-xl -mb-0.5 font-semibold"> Related  groups </h4>
-								</div>
-								<a href="#" class="text-blue-600 ">See all</a>
-							</div>
-							<div>
-								<div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
-									<div class="w-14 h-14 flex-shrink-0 rounded-md relative">
-										<img src="assets/user/images/group/group-3.jpg" class="absolute w-full h-full inset-0 rounded-md" alt=""/>
-									</div>
-									<div class="flex-1">
-										<h3 class="text-lg font-semibold capitalize"> Graphic Design </h3>
-										<div class="text-sm text-gray-500 -mt-0.5">
-											 345K Member
-										</div>
-									</div>
-									<a href="#" class="flex items-center justify-center h-9 px-4 rounded-md bg-gray-200 font-semibold">  Join </a>
-								</div>
-								<div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
-									<div class="w-14 h-14 flex-shrink-0 rounded-md relative">
-										<img src="assets/user/images/group/group-4.jpg" class="absolute w-full h-full inset-0 rounded-md" alt=""/>
-									</div>
-									<div class="flex-1">
-										<h3 class="text-lg font-semibold capitalize"> Mountain Riders</h3>
-										<div class="text-sm text-gray-500 -mt-0.5">
-											 845K Member
-										</div>
-									</div>
-									<a href="#" class="flex items-center justify-center h-9 px-4 rounded-md bg-gray-200 font-semibold">  Join </a>
-								</div>
-								<div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
-									<div class="w-14 h-14 flex-shrink-0 rounded-md relative">
-										<img src="assets/user/images/group/group-2.jpg" class="absolute w-full h-full inset-0 rounded-md" alt=""/>
-									</div>
-									<div class="flex-1">
-										<h3 class="text-lg font-semibold capitalize"> Coffee Addicts </h3>
-										<div class="text-sm text-gray-500 -mt-0.5">
-											 345K Member
-										</div>
-									</div>
-									<a href="#" class="flex items-center justify-center h-9 px-4 rounded-md bg-gray-200 font-semibold">  Join </a>
-								</div>
-								<div class="flex items-center space-x-4 hover:bg-gray-100 rounded-md -mx-2 p-2">
-									<div class="w-14 h-14 flex-shrink-0 rounded-md relative">
-										<img src="assets/user/images/group/group-1.jpg" class="absolute w-full h-full inset-0 rounded-md" alt=""/>
-									</div>
-									<div class="flex-1">
-										<h3 class="text-lg font-semibold capitalize"> Architecture </h3>
-										<div class="text-sm text-gray-500 -mt-0.5">
-											 845K Member
-										</div>
-									</div>
-									<a href="#" class="flex items-center justify-center h-9 px-4 rounded-md bg-gray-200 font-semibold">  Join </a>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
