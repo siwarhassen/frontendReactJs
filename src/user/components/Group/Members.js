@@ -143,10 +143,9 @@ export default function Members({match}) {
 					<nav class="cd-secondary-nav border-t -mb-0.5 lg:pl-2">
 						<ul>
 							<li ><Link to={`/group/${group?._id}`} > Home </Link></li>
-							<li><a href="#0">Photos</a></li>
+							
                             <li class="active"><Link to={`/members/${group?._id}`} > Members </Link></li>
-							<li><a href="#0">Discussion</a></li>
-							<li><a href="#0">Videos</a></li>
+							
 							<li><Link to={`/about/${group?._id}`} > About </Link></li>
 						</ul>
 					</nav>
