@@ -1,16 +1,17 @@
 import React ,{useState , useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-
+import createHistory from 'history/createBrowserHistory'
 import CreateRoom from "./videoChat/components/modal/CreateModal";
 
 
 import JoinRoom from './videoChat/components/modal/Join';
 
 const Header = ({history}) =>{
- 
+    const hi = createHistory()
   
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState("");
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [showCreateRoom, setShowCreateRoom] = useState(false);
@@ -29,11 +30,16 @@ const [userId, setUserId] = useState("");
 
     const searchthroughenter =(event) => {
    
-        if (event.keyCode === 13 ) {
-           history.push("/search/"+document.getElementById("searchinput").value)
-        
+      setSearch(event.target.value);
+      if (event.keyCode === 13 ) {
+       
+
          
-      }
+
+          document.getElementById("searchenter").click();
+       
+    }
+    
       
       
         }
@@ -100,9 +106,13 @@ const [userId, setUserId] = useState("");
                   
                     <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
                     <div class="header_search">
-                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  onKeyUp={searchthroughenter}/>
+                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  onKeyDown={searchthroughenter}/>
                        <i class="uil-search-alt"></i>
+                       <Link to={`/search/${search}`}>
+                       <button id="searchenter" type="hidden"></button>
+                       </Link> 
                     </div>
+                    <button hidden></button>
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
                         <div class="-mt-2 p-3">
                             <h4 class="font-semibold mb-1 mt-2 px-2.5 text-lg"> Recently  </h4>
