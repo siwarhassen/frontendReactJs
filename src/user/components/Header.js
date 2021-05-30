@@ -30,8 +30,8 @@ const [userId, setUserId] = useState("");
     const searchthroughenter =(event) => {
    
         if (event.keyCode === 13 ) {
-         
-            window.location.href = "https://3aweni.netlify.app/search/"+document.getElementById("searchinput").value;
+           history.push("/search/"+document.getElementById("searchinput").value)
+        
          
       }
       
