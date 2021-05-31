@@ -27,7 +27,7 @@ const [userId, setUserId] = useState("");
     };
     const [user, setUser]= useState(Object);
     const [notif, setNotif]= useState([]);
-
+ const { transcript, resetTranscript } = useSpeechRecognition()
   
     const searchthroughenter =(event) => {
    
@@ -106,8 +106,8 @@ const [userId, setUserId] = useState("");
                     </div>
                   
                     <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
-                    <div class="header_search">
-                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  onKeyDown={searchthroughenter}/>
+                    <div class="header_search"> 
+                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  value={transcript}  onKeyDown={searchthroughenter}/>
                        <i class="uil-search-alt"></i>
                        <Link to={`/search/${search}`}>
                        <button id="searchenter" type="hidden"></button>
@@ -148,7 +148,8 @@ const [userId, setUserId] = useState("");
                             </ul>
                         </div>
                     </div>
-    
+    <ion-icon name="mic-outline"  onMouseDown={ SpeechRecognition.startListening } onMouseUp={ SpeechRecognition.stopListening }   style= {{marginLeft:"-39px", marginTop:"-19px" , fontSize:"33px"}}  ></ion-icon>      
+                   
                     <div class="right_side">
     
                         <div class="header_widgets">
