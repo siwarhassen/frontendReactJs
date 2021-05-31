@@ -11,6 +11,7 @@ const Header = ({history}) =>{
     const hi = createHistory()
   
   const [show, setShow] = useState(false);
+  const { transcript, resetTranscript } = useSpeechRecognition()
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [search, setSearch] = useState("");
@@ -26,7 +27,7 @@ const [userId, setUserId] = useState("");
     };
     const [user, setUser]= useState(Object);
     const [notif, setNotif]= useState([]);
- const { transcript, resetTranscript } = useSpeechRecognition()
+
   
     const searchthroughenter =(event) => {
    
@@ -105,14 +106,17 @@ const [userId, setUserId] = useState("");
                     </div>
                   
                     <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
-                    <div class="header_search"> 
-                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  value={transcript}  onKeyDown={searchthroughenter}/>
+                    <div class="header_search">
+                    <input type="text" name="name" placeholder="Search for Friends ,Groups and more.." id="searchinput"  onKeyDown={searchthroughenter}/>
                        <i class="uil-search-alt"></i>
                        <Link to={`/search/${search}`}>
                        <button id="searchenter" type="hidden"></button>
                        </Link> 
                     </div>
-                   
+                    <button primary large>
+                    <ion-icon name="mic-outline" onMouseDown={SpeechRecognition.startListening}    style={{height:"400px",width:"30px",marginTop:"-10px"}}></ion-icon>
+</button>
+<p>{transcript}</p>
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
                         <div class="-mt-2 p-3">
                             <h4 class="font-semibold mb-1 mt-2 px-2.5 text-lg"> Recently  </h4>
@@ -144,8 +148,7 @@ const [userId, setUserId] = useState("");
                             </ul>
                         </div>
                     </div>
-    <ion-icon name="mic-outline"  onMouseDown={ SpeechRecognition.startListening } onMouseUp={ SpeechRecognition.stopListening }   style= {{marginLeft:"-39px", marginTop:"-19px" , fontSize:"33px"}}  ></ion-icon>      
-                   
+    
                     <div class="right_side">
     
                         <div class="header_widgets">
