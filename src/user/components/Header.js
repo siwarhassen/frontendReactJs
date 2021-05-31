@@ -11,7 +11,6 @@ const Header = ({history}) =>{
     const hi = createHistory()
   
   const [show, setShow] = useState(false);
-  const { transcript, resetTranscript } = useSpeechRecognition()
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [search, setSearch] = useState("");
