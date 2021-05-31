@@ -112,10 +112,7 @@ const [userId, setUserId] = useState("");
                        <button id="searchenter" type="hidden"></button>
                        </Link> 
                     </div>
-                    <button primary large>
-                    <ion-icon name="mic-outline" onMouseDown={SpeechRecognition.startListening}    style={{height:"400px",width:"30px",marginTop:"-10px"}}></ion-icon>
-</button>
-<p>{transcript}</p>
+                   
                     <div uk-drop="mode: click" class="hidden md:w-1/3 w-11/12 shadow-lg rounded-md -mt-2 bg-white">
                         <div class="-mt-2 p-3">
                             <h4 class="font-semibold mb-1 mt-2 px-2.5 text-lg"> Recently  </h4>
