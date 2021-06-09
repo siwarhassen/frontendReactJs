@@ -18,11 +18,10 @@ import youtube from '../courses/Youtube';
 import {selectReviewsCourse,addReview,setErrorsR,deleteReview,selectsumreviews} from "../../../redux/slices/reviewscourseSlice";
 import { reach } from 'yup';
 import axios from 'axios';
-import HeaderWithoutLeftPanel from '../HeaderWithoutLeftPanel';
-import LeftPanelCourse from '../LeftPanelCourse';
 export default function CourseDetail({match}) {
-    
- 
+    const userconnected = localStorage.getItem("connecteduser");
+    const [etatfav,setEtatfav]=useState();
+    const [ver,setVer]=useState();
     const stars=Array(5).fill(0);
     const [rating,setRating]=useState(0);
     const [hover,setHover]=useState(0);
@@ -51,12 +50,69 @@ localStorage.setItem("connecteduser", user._id);
    const [veriff,setVeriff]=useState(null);
 
    useEffect(() =>async() =>{
-    const findfavoris= await queryApi("favoris/verififavoris/6058e88da386333954f325c8/"+id,null,"GET")[0];
-    if(findfavoris!=undefined)
-    {
-        setVeriff(true);
+
+
+    const config = {
+        headers: {
+            "Content-Type":"appliation/json",
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`
+        }
     }
+
+    const id = match.params.id;
+    
+        axios.get(`https://aaweni.herokuapp.com/favoris/verififavoris/`+userconnected+'/'+id, config)
+    .then((response) => {
+       if(response.data)
+       {
+        setVeriff(true)
+       }
+       else
+       {
+        setVeriff(false)
+       }
+    })
+    .catch((error) => {
+    console.log(error)
+    })
+
+
+
+
+
+
+
     }, [veriff]);
+
+
+    useEffect(() => {
+        const config = {
+            headers: {
+                "Content-Type":"appliation/json",
+                Authorization: `Bearer ${localStorage.getItem("authToken")}`
+            }
+        }
+
+        const id = match.params.id;
+
+        
+            axios.get(`https://aaweni.herokuapp.com/usercourse/find/`+id, config)
+        .then((response) => {
+           if(response.data)
+           {
+               setVer(true)
+           }
+           else
+           {
+               setVer(false)
+           }
+        })
+        .catch((error) => {
+        console.log(error)
+        })
+
+    
+        }, [ver]);
  /* const veriffavoris = useSelector((state) =>
    state.favoris.favoris.find((item) => item._id === findfavoris?.course)
    );*/
@@ -112,7 +168,7 @@ localStorage.setItem("connecteduser", user._id);
     const [reviews, er] =useSelector(selectReviewsCourse);
    console.log(reviews);
     const [NbReviews,e] = useApi("reviewc/count/"+id,null,"GET",false);
-    const [findInscri,a] = useApi("usercourse/find/"+id,null,"GET",false);
+    const [findInscri,setFindInscri] = useApi("usercourse/find/"+id,null,"GET",false);
 
 const dateCourse=dateFormat(course?.DateCreation, "mmmm dS, yyyy");
 
@@ -207,6 +263,7 @@ const deletefav = (id) =>async () => {
       var usercourse={
         CourseId:course?._id
       }
+      setVer(true);
       const [inscriptio, err] = await  queryApi("usercourse/inscription",usercourse, "POST",false);
   
                   
@@ -222,8 +279,7 @@ const deletefav = (id) =>async () => {
           
 
 <div>
-<HeaderWithoutLeftPanel />
-<LeftPanelCourse/>
+ <Header />
 <div class="main_content">
             <div class="mcontainer">
 
@@ -266,10 +322,10 @@ const deletefav = (id) =>async () => {
                                     <li style={{marginTop:"3px"}}> <i class="icon-feather-users" ></i> {numberusers} Enrolled </li>
                            
                                     <li>
-                                    {findInscri==null ?(
+                                    {ver===false ?(
                                          <button style={{marginLeft:"270px"}} class=" h-6 lg:px-5 px-2 rounded-md bg-blue-600 text-white " onClick={Inscription}>
                                              Enroll Now
-                                         </button>):(<p> <Link to={`/learn/${findInscri._id}`} style={{marginLeft:"270px"}}   disabled class=" h-6 lg:px-5 px-2 rounded-md bg-blue-600 text-white " >
+                                         </button>):(<p> <Link to={`/learn/${findInscri?._id}`} style={{marginLeft:"270px"}}   disabled class=" h-6 lg:px-5 px-2 rounded-md bg-blue-600 text-white " >
                                              
                                         Go to class
                                          </Link></p>) }</li>
@@ -575,13 +631,9 @@ const deletefav = (id) =>async () => {
                                 <h3 class="mb-8 mt-20 font-semibold text-2xl" style={{color: "#0cb9c1"}}> Reviews ({reviews?.length}) </h3>
                                { reviews?.map((rev, index) => (
                                 <div class="flex gap-x-4 mb-5 relative" key={rev?._id}>
-                                  <Link to={`/userdetails/${rev?.UserId?._id}`}>
                                     <img src={rev?.UserId?.profilePicture}  alt="" class="rounded-full shadow w-12 h-12"/>
-                                     </Link>
                                     <div>
-                                     <Link to={`/userdetails/${rev?.UserId?._id}`}>
                                         <h4 class="text-base m-0"> {rev?.UserId?.username}</h4>
-                                      </Link>
                                         <span class="text-gray-700 text-sm"> {dateFormat(rev?.DateCreation, "mmmm dS, yyyy")} </span>
                                         <p class="mt-3">
                                             {rev?.Content}
