@@ -808,7 +808,7 @@ const fileType=['application/pdf'];
 
                                 <li class="flex items-center space-x-2"> 
                                   <ion-icon name="globe" class=" rounded-full bg-gray-200 text-xl p-1.5 mr-3"></ion-icon>
-                                <a href={val.cv}>cv.pdf</a>  
+                                   <a href={val.cv} target="_blank"  rel="noopener noreferrer">cv.pdf</a>  
                                   <button onClick={deleteHandler(val._id)} class="text-xl font-semibold line-clamp-2" style={{marginLeft:'150px', fontSize:'13px',color:'#fe5a1d'}} ><img src="assets/user/images/supp5.png" style={{width:'20px', height:'20px'}} alt=""/></button>
                                 </li>
 
