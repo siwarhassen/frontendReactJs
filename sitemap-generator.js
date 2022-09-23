@@ -8,7 +8,7 @@ require("babel-register")({
   function generateSitemap() {
       return (
         new Sitemap(router)
-            .build("https://3aweni.netlify.app")
+            .build("siwarhassen.netlify.app")
             .save("./public/sitemap.xml")
       );
   }
